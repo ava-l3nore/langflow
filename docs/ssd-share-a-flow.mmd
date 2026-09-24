@@ -1,0 +1,7 @@
+sequenceDiagram
+    actor B as Flow Builder
+    participant S as :Langflow
+    loop more recipients
+        B->>S: createShare(flowId, scope, targetId, permissionLevel)
+        S-->>B: shareId, targetName
+    end

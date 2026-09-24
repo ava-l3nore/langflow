@@ -1,0 +1,7 @@
+sequenceDiagram
+    actor B as Flow Builder
+    participant S as :Langflow
+    loop more chat turns
+        B->>S: runFlow(flowId, inputValue, sessionId)
+        S-->>B: outputs, sessionId
+    end

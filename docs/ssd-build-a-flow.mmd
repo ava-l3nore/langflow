@@ -1,0 +1,9 @@
+sequenceDiagram
+    actor B as Flow Builder
+    participant S as :Langflow
+    B->>S: createFlow(name, projectId)
+    S-->>B: flowId, name
+    loop until the flow is complete
+        B->>S: saveFlow(flowId, components, connections)
+        S-->>B: lastModified
+    end

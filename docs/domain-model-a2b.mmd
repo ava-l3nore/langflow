@@ -1,0 +1,68 @@
+classDiagram
+    class Flow {
+        name
+        description
+        lastModified
+    }
+    class Component {
+        displayName
+        category
+        configuration
+    }
+    class Connection {
+        sourcePort
+        targetPort
+    }
+    class Project {
+        name
+    }
+    class Run {
+        startedAt
+        status
+        inputValue
+        sessionId
+    }
+    class Message {
+        text
+        sender
+        timestamp
+    }
+    class ModelProvider {
+        name
+        credentialName
+    }
+    class Author {
+        username
+    }
+    class Share {
+        scope
+        permissionLevel
+        createdAt
+    }
+    class Team {
+        name
+    }
+    class AuditEntry {
+        action
+        result
+        timestamp
+    }
+
+    Author "1" -- "0..*" Project : owns
+    Author "1" -- "0..*" Flow : owns
+    Project "1" -- "0..*" Flow : organizes
+    Flow "1" -- "0..*" Component : contains
+    Flow "1" -- "0..*" Connection : wires
+    Connection "1" -- "1" Component : from >
+    Connection "1" -- "1" Component : to >
+    Flow "1" -- "0..*" Run : isExecutedAs
+    Author "1" -- "0..*" Run : starts
+    Run "1" -- "0..*" Message : produces
+    Component "0..*" -- "0..1" ModelProvider : callsOut
+    Flow "1" -- "0..*" Share : isGrantedBy
+    Share "0..*" -- "1" Author : createdBy
+    Share "0..*" -- "0..1" Author : targetUser
+    Share "0..*" -- "0..1" Team : targetTeam
+    Team "0..*" -- "0..*" Author : hasMember
+    AuditEntry "0..*" -- "1" Author : performedBy
+    AuditEntry "0..*" -- "0..1" Flow : concerns
