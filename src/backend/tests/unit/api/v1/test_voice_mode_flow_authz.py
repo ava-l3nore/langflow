@@ -6,7 +6,7 @@ from uuid import uuid4
 
 import pytest
 from fastapi import BackgroundTasks, HTTPException
-from langflow.api.v1 import voice_mode
+from langflow.api.v1 import flows_helpers, voice_mode
 from langflow.services.database.models.flow.model import AccessTypeEnum, Flow
 from langflow.services.deps import session_scope
 from lfx.services.model_provider_policy import (
@@ -104,7 +104,7 @@ async def test_authorized_voice_flow_allows_owner(monkeypatch):
     session = SimpleNamespace()
     read_flow = AsyncMock(return_value=flow)
     ensure_permission = AsyncMock()
-    monkeypatch.setattr(voice_mode, "_read_flow", read_flow, raising=False)
+    monkeypatch.setattr(flows_helpers, "_read_flow", read_flow)
     monkeypatch.setattr(voice_mode, "ensure_flow_permission", ensure_permission, raising=False)
 
     result = await voice_mode._get_authorized_voice_flow(str(flow.id), user, session)
@@ -127,7 +127,7 @@ async def test_authorized_voice_flow_allows_share_aware_fetch_when_guard_allows(
     session = SimpleNamespace()
     read_flow = AsyncMock(return_value=foreign_flow)
     ensure_permission = AsyncMock()
-    monkeypatch.setattr(voice_mode, "_read_flow", read_flow, raising=False)
+    monkeypatch.setattr(flows_helpers, "_read_flow", read_flow)
     monkeypatch.setattr(voice_mode, "ensure_flow_permission", ensure_permission, raising=False)
 
     result = await voice_mode._get_authorized_voice_flow(str(foreign_flow.id), user, session)
@@ -151,7 +151,7 @@ async def test_authorized_voice_flow_preserves_public_flow_access(monkeypatch):
     ensure_permission = AsyncMock()
     result = SimpleNamespace(first=lambda: public_flow)
     session = SimpleNamespace(exec=AsyncMock(return_value=result))
-    monkeypatch.setattr(voice_mode, "_read_flow", read_flow, raising=False)
+    monkeypatch.setattr(flows_helpers, "_read_flow", read_flow)
     monkeypatch.setattr(voice_mode, "ensure_flow_permission", ensure_permission, raising=False)
 
     authorized = await voice_mode._get_authorized_voice_flow(str(public_flow.id), user, session)
@@ -182,7 +182,7 @@ async def test_missing_voice_flow_uses_same_generic_404(monkeypatch):
     ensure_permission = AsyncMock()
     result = SimpleNamespace(first=lambda: None)
     session = SimpleNamespace(exec=AsyncMock(return_value=result))
-    monkeypatch.setattr(voice_mode, "_read_flow", read_flow)
+    monkeypatch.setattr(flows_helpers, "_read_flow", read_flow)
     monkeypatch.setattr(voice_mode, "ensure_flow_permission", ensure_permission)
 
     with pytest.raises(HTTPException) as exc_info:
@@ -206,7 +206,7 @@ async def test_denied_cross_user_websocket_reaches_no_secret_description_config_
     monkeypatch.setattr(voice_mode, "get_current_user_for_websocket", AsyncMock(return_value=user))
     authenticate = AsyncMock(return_value=(user, "test-openai-key"))
     monkeypatch.setattr(voice_mode, "authenticate_and_get_openai_key", authenticate)
-    monkeypatch.setattr(voice_mode, "_read_flow", AsyncMock(return_value=foreign_flow), raising=False)
+    monkeypatch.setattr(flows_helpers, "_read_flow", AsyncMock(return_value=foreign_flow))
     monkeypatch.setattr(
         voice_mode,
         "ensure_flow_permission",
@@ -271,7 +271,7 @@ async def test_denied_tts_websocket_reaches_no_secret_config_provider_or_flow_si
 
     monkeypatch.setattr(voice_mode, "get_current_user_for_websocket", AsyncMock(return_value=user))
     monkeypatch.setattr(voice_mode, "authenticate_and_get_openai_key", authenticate)
-    monkeypatch.setattr(voice_mode, "_read_flow", AsyncMock(return_value=foreign_flow))
+    monkeypatch.setattr(flows_helpers, "_read_flow", AsyncMock(return_value=foreign_flow))
     monkeypatch.setattr(
         voice_mode,
         "ensure_flow_permission",

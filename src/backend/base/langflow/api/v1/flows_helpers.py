@@ -37,6 +37,7 @@ from langflow.services.database.models.flow.guards import (
     lock_flow_for_update,
 )
 from langflow.services.database.models.flow.model import (
+    AccessTypeEnum,
     Flow,
     FlowCreate,
     FlowRead,
@@ -506,6 +507,22 @@ async def _read_flow(
         owner_id=user_id,
         for_update=for_update,
     )
+
+
+async def _read_flow_or_public(session: AsyncSession, flow_id: UUID, user_id: UUID) -> Flow | None:
+    """Read a flow the user can run: one ``_read_flow`` returns, or else any PUBLIC flow.
+
+    PUBLIC flows stay buildable by any authenticated user, whether or not an
+    authorization plugin is registered.
+    """
+    flow = await _read_flow(session, flow_id, user_id)
+    if flow is None:
+        public_stmt = select(Flow).where(
+            Flow.id == flow_id,
+            Flow.access_type == AccessTypeEnum.PUBLIC,
+        )
+        flow = (await session.exec(public_stmt)).first()
+    return flow
 
 
 async def _update_existing_flow(

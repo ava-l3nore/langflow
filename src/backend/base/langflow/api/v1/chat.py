@@ -63,7 +63,7 @@ from langflow.services.authorization.public_access import (
     authorize_public_flow_access,
 )
 from langflow.services.chat.service import ChatService
-from langflow.services.database.models.flow.model import AccessTypeEnum, Flow
+from langflow.services.database.models.flow.model import Flow
 from langflow.services.database.models.user.model import User
 from langflow.services.deps import (
     get_chat_service,
@@ -344,16 +344,10 @@ async def build_flow(
     # keep the historical owner-or-PUBLIC scoping so the OSS pass-through
     # default cannot widen visibility. PUBLIC flows stay buildable by any
     # authenticated user in both modes.
-    from langflow.api.v1.flows_helpers import _read_flow
+    from langflow.api.v1.flows_helpers import _read_flow_or_public
 
     async with session_scope() as session:
-        flow = await _read_flow(session, flow_id, current_user.id)
-        if flow is None:
-            public_stmt = select(Flow).where(
-                Flow.id == flow_id,
-                Flow.access_type == AccessTypeEnum.PUBLIC,
-            )
-            flow = (await session.exec(public_stmt)).first()
+        flow = await _read_flow_or_public(session, flow_id, current_user.id)
         if not flow:
             await logger.awarning(
                 "Flow access denied for user %s: flow %s not found or not owned",

@@ -28,19 +28,18 @@ from lfx.services.model_provider_policy import (
     aresolve_model_provider_policy,
 )
 from lfx.utils.secrets import secret_value_to_str
-from sqlmodel import select
 from starlette.websockets import WebSocket, WebSocketDisconnect
 from websockets.asyncio.client import ClientConnection
 
 from langflow.api.utils import CurrentActiveUser, DbSession
 from langflow.api.v1.chat import build_flow_and_stream
-from langflow.api.v1.flows_helpers import _read_flow
+from langflow.api.v1.flows_helpers import _read_flow_or_public
 from langflow.memory import aadd_messagetables
 from langflow.schema.properties import Properties
 from langflow.services.auth.utils import get_current_user_for_websocket
 from langflow.services.authorization import FlowAction, VoiceAction, ensure_flow_permission, ensure_voice_permission
 from langflow.services.authorization.fetch import deny_to_404
-from langflow.services.database.models.flow.model import AccessTypeEnum, Flow
+from langflow.services.database.models.flow.model import Flow
 from langflow.services.database.models.message.model import MessageTable
 from langflow.services.database.models.user.model import User
 from langflow.services.deps import get_variable_service
@@ -536,13 +535,7 @@ last_sender_by_session: defaultdict[str, str | None] = defaultdict(lambda: None)
 async def _get_authorized_voice_flow(flow_id: str, current_user: CurrentActiveUser, session: DbSession) -> Flow:
     """Load a voice flow with the same share-aware execute policy as standard builds."""
     flow_uuid = UUID(flow_id)
-    flow = await _read_flow(session, flow_uuid, current_user.id)
-    if flow is None:
-        public_stmt = select(Flow).where(
-            Flow.id == flow_uuid,
-            Flow.access_type == AccessTypeEnum.PUBLIC,
-        )
-        flow = (await session.exec(public_stmt)).first()
+    flow = await _read_flow_or_public(session, flow_uuid, current_user.id)
     if flow is None:
         raise HTTPException(status_code=404, detail="Flow not found")
 
