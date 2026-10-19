@@ -1,0 +1,22 @@
+classDiagram
+    class Component
+    class LCModelComponent {
+        <<abstract>>
+        +stream: bool
+        +input_value: str
+        +system_message: str
+        +text_response() Message
+        +get_chat_result(runnable, stream, input_value, system_message) Message
+        +build_model() LanguageModel*
+    }
+    class AnthropicModelComponent {
+        +build_model() LanguageModel
+    }
+    class AzureChatOpenAIComponent {
+        +build_model() LanguageModel
+    }
+    Component <|-- LCModelComponent
+    LCModelComponent <|-- AnthropicModelComponent
+    LCModelComponent <|-- AzureChatOpenAIComponent
+    note for LCModelComponent "text_response() calls build_model(),
+which each provider overrides"
