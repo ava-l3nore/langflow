@@ -1,0 +1,25 @@
+classDiagram
+    class StructuredTool {
+        <<LangChain>>
+        +name: str
+        +description: str
+        +args_schema
+        +_run(args, kwargs)
+        +_arun(args, kwargs)
+    }
+    class ComponentStructuredTool {
+        +response_format: str
+        +_run(args, config, run_manager, kwargs) tuple
+        +_arun(args, config, run_manager, kwargs) tuple
+    }
+    class ComponentToolkit {
+        +component: Component
+        +get_tools(...) list~StructuredTool~
+    }
+    class Component {
+        +inputs: list
+        +outputs: list
+    }
+    StructuredTool <|-- ComponentStructuredTool
+    ComponentToolkit --> Component : wraps
+    ComponentToolkit ..> ComponentStructuredTool : creates

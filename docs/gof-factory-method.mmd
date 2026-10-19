@@ -1,0 +1,35 @@
+classDiagram
+    class ServiceFactory {
+        <<abstract>>
+        +service_class
+        +dependencies: list
+        +create(kwargs) Service*
+    }
+    class StorageServiceFactory {
+        +create(session_service, settings_service) StorageService
+    }
+    class Service {
+        <<abstract>>
+    }
+    class StorageService {
+        <<abstract>>
+        +save_file(flow_id, file_name, data)*
+        +get_file(flow_id, file_name) bytes*
+        +list_files(flow_id) list~str~*
+        +delete_file(flow_id, file_name)*
+    }
+    class LocalStorageService
+    class S3StorageService
+    class ServiceManager {
+        -services: dict
+        -factories: dict
+        +get(service_name) Service
+        -_create_service_from_factory(service_name)
+    }
+    ServiceFactory <|-- StorageServiceFactory
+    Service <|-- StorageService
+    StorageService <|-- LocalStorageService
+    StorageService <|-- S3StorageService
+    ServiceManager --> ServiceFactory : calls create()
+    StorageServiceFactory ..> LocalStorageService : creates
+    StorageServiceFactory ..> S3StorageService : creates
