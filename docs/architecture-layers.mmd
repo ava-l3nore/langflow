@@ -1,0 +1,50 @@
+flowchart TB
+    subgraph PRES["Presentation (client)"]
+        FE["src/frontend/src<br/>components/ · stores/ (Zustand)"]
+    end
+
+    subgraph API["API layer: src/backend/base/langflow/api"]
+        V1["v1/<br/>chat.py · flows.py · authz_shares.py · login.py"]
+        V2["v2/"]
+        APIU["api/build.py · api/utils/"]
+    end
+
+    subgraph SVC["Service layer: langflow/services"]
+        AUTH["auth/ · authorization/"]
+        JQ["job_queue/ · chat/ · cache/ · variable/"]
+        MB["memory_base/ · flow/ · storage/ · tracing/"]
+        DEPS["deps.py (service lookup)"]
+    end
+
+    subgraph DATA["Persistence: services/database"]
+        MODELS["models/ (flow, user, auth/AuthzShare, folder, message)<br/>crud.py · session.py"]
+        ALEMBIC["alembic/ migrations"]
+    end
+
+    subgraph CORE["Execution core: src/lfx/src/lfx"]
+        GRAPH["graph/ (Graph, Vertex, Edge)"]
+        COMP["custom/ (Component) · components/"]
+        LFXSVC["services/ (Base*Service abstractions)"]
+    end
+
+    FE -- "HTTP / REST" --> V1
+    FE -- "HTTP / REST" --> V2
+    V1 --> APIU
+    V1 --> DEPS
+    APIU --> DEPS
+    DEPS --> AUTH
+    DEPS --> JQ
+    DEPS --> MB
+    V1 --> MODELS
+    AUTH --> MODELS
+    JQ --> MODELS
+    MB --> MODELS
+    APIU --> GRAPH
+    GRAPH --> COMP
+    AUTH -. implements .-> LFXSVC
+    MODELS --> ALEMBIC
+
+    MB -. "VIOLATION: services import api" .-> APIU
+    COMP -. "VIOLATION: lfx imports langflow" .-> MODELS
+
+    linkStyle 16,17 stroke:#d33,stroke-dasharray:4
