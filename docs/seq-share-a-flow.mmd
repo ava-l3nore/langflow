@@ -1,0 +1,29 @@
+sequenceDiagram
+    participant C as Frontend
+    participant R as authz_shares.py::create_share
+    participant S as AsyncSession (DbSession)
+    participant Z as LangflowAuthorizationService<br/>(BaseAuthorizationService)
+    participant M as AuthzShare (model)
+    participant AU as authorization.utils::audit_decision
+
+    C->>R: POST /api/v1/authz/shares (ShareCreate)
+    R->>R: _resolve_resource_owner(session, resource_type, resource_id)
+    R->>S: select owner of Flow/Deployment/...
+    S-->>R: owner_id (None -> 404)
+    R->>R: _ensure_can_administer_share(user, owner_id)
+    R->>Z: supports_cross_user_fetch() / is_enabled()
+    Z-->>R: bool
+    alt not owner, not superuser, no plugin
+        R-->>C: 403 (masked to 404 by deny_to_404)
+    end
+    R->>Z: ensure_share_permission(user, ShareAction.CREATE)
+    Z-->>R: allow (OSS) or HTTPException (plugin)
+    R->>R: _ensure_supported_share_permission() (PUBLIC needs execute)
+    R->>M: AuthzShare(resource_id, scope, target_id, permission_level, created_by)
+    R->>S: add(row), flush(), commit()
+    alt insert conflict
+        R-->>C: 409
+    end
+    R->>Z: sync_share(id) / sync_shares() / invalidate_user() / invalidate_all()
+    R->>AU: audit_decision(action="share:create", result="allow")
+    R-->>C: 201 ShareRead

@@ -1,0 +1,36 @@
+sequenceDiagram
+    participant C as Frontend / API client
+    participant B as chat.py::build_flow
+    participant Z as authorization.guards<br/>(LangflowAuthorizationService)
+    participant Q as JobQueueService
+    participant E as EventManager
+    participant G as Graph (lfx)
+    participant V as Vertex (lfx)
+    participant K as Component (lfx)
+    participant CS as ChatService
+
+    C->>B: POST /build/{flow_id}/flow
+    B->>B: _read_flow(session, flow_id, user.id)
+    B->>Z: ensure_flow_permission(user, EXECUTE, ...)
+    Z-->>B: allow (OSS) or 403/404 (plugin)
+    B->>Q: start_flow_build(): create_queue(job_id)
+    Q-->>B: (queue, EventManager)
+    B->>Q: start_job(job_id, generate_flow_events(...))
+    B-->>C: {job_id}
+
+    Note over Q,CS: background task, decoupled from the HTTP request
+    Q->>G: create_graph() / build_graph_from_db()
+    Q->>CS: set_cache(flow_id, graph)
+    Q->>G: sort_vertices()
+    loop each runnable vertex
+        Q->>G: build_vertex(vertex_id, get_cache, set_cache)
+        G->>V: build(...)
+        V->>K: instantiate_class(...), run outputs
+        K-->>V: results / artifacts
+        V-->>G: VertexBuildResult
+        G-->>Q: next runnable vertices
+        Q->>E: end_vertex event
+    end
+    Q->>E: on_end()
+    C->>B: GET /build/{job_id}/events (polling)
+    B-->>C: events from queue
