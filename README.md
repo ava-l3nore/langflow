@@ -1,5 +1,21 @@
 <!-- markdownlint-disable MD030 -->
 
+> [!NOTE]
+> **About this fork**
+>
+> I'm using this fork of [langflow-ai/langflow](https://github.com/langflow-ai/langflow) to study Langflow's architecture as part of my Software Architecture, Security, and Testing course at the College of Charleston.
+>
+> I've documented my work in the **[project wiki](https://github.com/ava-l3nore/langflow/wiki)** as I've gone through different parts of the architecture. It includes:
+>
+> - Requirements and use cases
+> - System sequence diagrams and operation contracts
+> - Logical architecture diagrams
+> - Design pattern analysis and applied refactorings (e.g., Factory Method for `StorageServiceFactory`, Controller for `build_flow`)
+>
+> The original Langflow README follows below.
+
+---
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./docs/static/img/langflow-logo-color-blue-bg.svg">
   <img src="./docs/static/img/langflow-logo-color-black-solid.svg" alt="Langflow logo">
