@@ -1,0 +1,47 @@
+flowchart LR
+    %% Misuse case diagram for Langflow (A5). Extends docs/use-case-diagram.drawio.
+    FB["«actor»<br/>Flow Builder"]
+    LLMA["«actor»<br/>External LLM Provider API<br/>(supporting)"]
+    ADM["«actor»<br/>Administrator / Auditor<br/>(offstage)"]
+
+    subgraph SYS["Langflow"]
+        direction TB
+        UC1(["Build a Flow"])
+        C1(["Restrict Custom Code to Admins"])
+        UC2(["Share a Flow"])
+        C2(["Disable Superuser CLI"])
+        UC3(["Run a Flow"])
+        C3(["Rate-Limit Webhook Runs<br/>(A5-Fix)"])
+        M1(["Execute Arbitrary Code on Server"])
+        M2(["Escalate to Superuser"])
+        M3(["Exhaust Owner's LLM Quota"])
+    end
+
+    ATK1["«attacker»<br/>Malicious Logged-in User"]
+    ATK2["«attacker»<br/>External Attacker<br/>(no account)"]
+
+    FB --- UC1
+    FB --- UC2
+    FB --- UC3
+    LLMA --- UC3
+    ADM -. reviews audit trail .- UC2
+
+    ATK1 --- M1
+    ATK1 --- M2
+    ATK2 --- M3
+
+    M1 -. threatens .-> UC1
+    M2 -. threatens .-> UC2
+    M3 -. threatens .-> UC3
+    M2 -. includes .-> M1
+
+    C1 -. mitigates .-> M1
+    C2 -. mitigates .-> M2
+    C3 -. mitigates .-> M3
+
+    classDef misuse fill:#000,color:#fff,stroke:#000
+    classDef control fill:#fff,color:#000,stroke:#2e7d32,stroke-width:2px,stroke-dasharray:5 3
+    classDef attacker fill:#000,color:#fff,stroke:#000
+    class M1,M2,M3 misuse
+    class C1,C2,C3 control
+    class ATK1,ATK2 attacker

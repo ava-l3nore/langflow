@@ -1,0 +1,58 @@
+flowchart LR
+    %% Trust boundary diagram for Langflow (A5). Numbered edges C1..C12 are boundary crossings.
+
+    subgraph TB0["TB0: Untrusted outside world"]
+        BROWSER["Browser / Flow Builder<br/>(React SPA)"]
+        ANON["Anonymous visitor<br/>(public flow link)"]
+        EXT["External system<br/>(webhook caller)"]
+    end
+
+    subgraph TB1["TB1: Langflow server process (FastAPI)"]
+        direction TB
+        subgraph UNAUTH["TB2a: Unauthenticated routes"]
+            LOGIN["api/v1/login.py<br/>/login · /auto_login"]
+            PUB["api/v1/chat.py<br/>/build_public_tmp"]
+        end
+        subgraph AUTHN["TB2b: Authenticated routes"]
+            API["api/v1 · api/v2<br/>flows · files · custom_component · run"]
+            HOOK["api/v1/endpoints.py<br/>/webhook/{flow}"]
+        end
+        subgraph EXEC["TB3: User-authored code runs here"]
+            GRAPH["lfx graph engine<br/>+ custom component code"]
+            BG["Background task<br/>(runs as flow owner)"]
+            PARSE["File parsers<br/>(pypdf, python-docx)"]
+        end
+    end
+
+    subgraph TB4["TB4: Data stores"]
+        DB[("SQL DB<br/>flows · users · encrypted variables")]
+        FS[("File storage<br/>uploads")]
+    end
+
+    subgraph TB5["TB5: Third-party services"]
+        LLM["LLM provider APIs<br/>(OpenAI, Anthropic, ...)"]
+    end
+
+    subgraph TB6["TB6: Build & distribution"]
+        CI["GitHub Actions<br/>release.yml · docker-build-v2.yml"]
+        REG["PyPI / Docker Hub"]
+        USERHOST["Operator's machine<br/>pip install / docker pull"]
+    end
+
+    BROWSER -- "C1: credentials" --> LOGIN
+    BROWSER -- "C2: JWT cookie / API key + JSON" --> API
+    ANON -- "C3: client_id cookie + inputs" --> PUB
+    EXT -- "C4: x-api-key + raw body" --> HOOK
+    API -- "C5: flow JSON incl. component code" --> GRAPH
+    HOOK -- "C6: identity switch to owner" --> BG
+    BG --> GRAPH
+    API -- "C7: uploaded bytes" --> FS
+    FS -- "C8: file bytes" --> PARSE
+    API -- "C9: ORM queries" --> DB
+    GRAPH -- "C10a: prompt + decrypted API key" --> LLM
+    LLM -- "C10b: completions / tool calls" --> GRAPH
+    CI -- "C11: wheels & images (API token)" --> REG
+    REG -- "C12: artifacts, no attestation" --> USERHOST
+
+    classDef finding stroke:#c62828,stroke-width:3px
+    class HOOK,GRAPH,LLM,REG finding

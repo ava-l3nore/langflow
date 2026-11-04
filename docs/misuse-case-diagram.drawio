@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Misuse Case Diagram" id="langflow-misuse">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- System boundary -->
+        <mxCell id="boundary" value="Langflow" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="30" width="640" height="660" as="geometry" />
+        </mxCell>
+
+        <!-- Normal actors (left, outside boundary) -->
+        <mxCell id="actorFlowBuilder" value="Flow Builder" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actorLLM" value="External LLM Provider API&#10;(supporting actor)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="380" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actorAdmin" value="Administrator / Auditor&#10;(offstage actor)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="570" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Attackers (right, outside boundary, black) -->
+        <mxCell id="attackerInsider" value="Malicious Logged-in User&#10;(misuser)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="930" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attackerExternal" value="External Attacker&#10;(no account)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="930" y="420" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Use cases (from A2) -->
+        <mxCell id="ucBuild" value="Build a Flow" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="70" width="200" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ucShare" value="Share a Flow" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="250" width="200" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ucRun" value="Run a Flow" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="430" width="200" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- Controls (mitigating use cases) -->
+        <mxCell id="ctlAdmin" value="Restrict Custom Code to Admins" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="160" width="200" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ctlCli" value="Disable Superuser CLI" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="340" width="200" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ctlRate" value="Rate-Limit Webhook Runs&#10;(A5-Fix)" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="530" width="200" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- Misuse cases (black) -->
+        <mxCell id="mcRce" value="Execute Arbitrary Code on Server" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="100" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mcEscalate" value="Escalate to Superuser" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="280" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mcFlood" value="Exhaust Owner's LLM Quota" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="470" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Normal associations -->
+        <mxCell id="e1" style="html=1;endArrow=none;" edge="1" parent="1" source="actorFlowBuilder" target="ucBuild"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="html=1;endArrow=none;" edge="1" parent="1" source="actorFlowBuilder" target="ucShare"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="html=1;endArrow=none;" edge="1" parent="1" source="actorFlowBuilder" target="ucRun"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="html=1;endArrow=none;" edge="1" parent="1" source="actorLLM" target="ucRun"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="reviews audit trail" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="actorAdmin" target="ucShare"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Attacker associations -->
+        <mxCell id="a1" style="html=1;endArrow=none;" edge="1" parent="1" source="attackerInsider" target="mcRce"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a2" style="html=1;endArrow=none;" edge="1" parent="1" source="attackerInsider" target="mcEscalate"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a3" style="html=1;endArrow=none;" edge="1" parent="1" source="attackerExternal" target="mcFlood"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- threatens (red) -->
+        <mxCell id="t1" value="&lt;&lt;threatens&gt;&gt;" style="html=1;endArrow=open;dashed=1;strokeColor=#c62828;fontColor=#c62828;" edge="1" parent="1" source="mcRce" target="ucBuild"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="t2" value="&lt;&lt;threatens&gt;&gt;" style="html=1;endArrow=open;dashed=1;strokeColor=#c62828;fontColor=#c62828;" edge="1" parent="1" source="mcEscalate" target="ucShare"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="t3" value="&lt;&lt;threatens&gt;&gt;" style="html=1;endArrow=open;dashed=1;strokeColor=#c62828;fontColor=#c62828;" edge="1" parent="1" source="mcFlood" target="ucRun"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- includes -->
+        <mxCell id="i1" value="&lt;&lt;includes&gt;&gt;" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="mcEscalate" target="mcRce"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- mitigates (green) -->
+        <mxCell id="m1" value="&lt;&lt;mitigates&gt;&gt;" style="html=1;endArrow=open;dashed=1;strokeColor=#2e7d32;fontColor=#2e7d32;" edge="1" parent="1" source="ctlAdmin" target="mcRce"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m2" value="&lt;&lt;mitigates&gt;&gt;" style="html=1;endArrow=open;dashed=1;strokeColor=#2e7d32;fontColor=#2e7d32;" edge="1" parent="1" source="ctlCli" target="mcEscalate"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m3" value="&lt;&lt;mitigates&gt;&gt;" style="html=1;endArrow=open;dashed=1;strokeColor=#2e7d32;fontColor=#2e7d32;" edge="1" parent="1" source="ctlRate" target="mcFlood"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;White ellipse = use case&lt;br&gt;Green dashed ellipse = control&lt;br&gt;Black ellipse = misuse case&lt;br&gt;Black actor = attacker" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="870" y="580" width="200" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
