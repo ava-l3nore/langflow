@@ -1004,6 +1004,9 @@ async def _patch_flow(
     return FlowRead.model_validate(db_flow, from_attributes=True)
 
 
+_WINDOWS_RESERVED_NAME = re.compile(r"^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\..+)?$", re.IGNORECASE)
+
+
 def _sanitize_flow_filename(raw_name: str, fallback_id: str = "flow") -> str:
     """Return a filesystem-safe filename from a flow name.
 
@@ -1012,9 +1015,7 @@ def _sanitize_flow_filename(raw_name: str, fallback_id: str = "flow") -> str:
     name = str(raw_name).replace("/", "_").replace("\\", "_")
     name = name.replace("\x00", "").replace("..", "_").strip()
     # Reject Windows reserved device names (CON, PRN, AUX, NUL, COM1-9, LPT1-9)
-    import re as _re
-
-    if _re.match(r"^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\..+)?$", name, _re.IGNORECASE):
+    if _WINDOWS_RESERVED_NAME.match(name):
         name = f"_{name}"
     return name or fallback_id
 
