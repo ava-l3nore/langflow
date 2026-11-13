@@ -1,0 +1,54 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/avalm/langflow/.venv/bin/python
+hypothesis profile 'default'
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'langflow-sdk': '0.4.0', 'locust': '2.47.0', 'json-report': '1.5.0', 'sugar': '1.1.1', 'anyio': '4.14.2', 'xdist': '3.8.0', 'instafail': '0.5.0', 'hypothesis': '6.161.7', 'github-actions-annotate-failures': '0.4.2', 'opik': '2.2.7', 'mock': '3.15.1', 'Faker': '40.36.0', 'split': '0.11.0', 'profiling': '1.8.1', 'lfx': '1.13.2', 'typeguard': '4.6.0', 'langsmith': '0.10.10', 'codeflash-benchmark': '0.3.0', 'cov': '7.1.0', 'flakefinder': '1.1.0', 'metadata': '3.1.1', 'rerunfailures': '16.4', 'asyncio': '1.4.0', 'respx': '0.23.1', 'pyleak': '0.2.0', 'timeout': '2.4.0'}}
+rootdir: /home/avalm/langflow
+configfile: pyproject.toml
+plugins: langflow-sdk-0.4.0, locust-2.47.0, json-report-1.5.0, sugar-1.1.1, anyio-4.14.2, xdist-3.8.0, instafail-0.5.0, hypothesis-6.161.7, github-actions-annotate-failures-0.4.2, opik-2.2.7, mock-3.15.1, Faker-40.36.0, split-0.11.0, profiling-1.8.1, lfx-1.13.2, typeguard-4.6.0, langsmith-0.10.10, codeflash-benchmark-0.3.0, cov-7.1.0, flakefinder-1.1.0, metadata-3.1.1, rerunfailures-16.4, asyncio-1.4.0, respx-0.23.1, pyleak-0.2.0, timeout-2.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+timeout: 90.0s
+timeout method: thread
+timeout func_only: False
+collecting ... collected 1 item
+
+src/backend/tests/unit/api/v1/test_flows_download_zip.py::test_download_zip_when_two_flow_names_sanitize_to_same_filename_keeps_both_flows FAILED [100%]
+
+=================================== FAILURES ===================================
+_ test_download_zip_when_two_flow_names_sanitize_to_same_filename_keeps_both_flows _
+
+async_session = <sqlmodel.ext.asyncio.session.AsyncSession object at 0x7397a324be00>
+tmp_path = PosixPath('/tmp/pytest-of-avalm/pytest-2/test_download_zip_when_two_flo0')
+
+    async def test_download_zip_when_two_flow_names_sanitize_to_same_filename_keeps_both_flows(async_session, tmp_path):
+        flows = [
+            Flow(id=uuid4(), name="Q1/Q2", data={"nodes": [], "edges": []}),
+            Flow(id=uuid4(), name="Q1_Q2", data={"nodes": [], "edges": []}),
+        ]
+
+        response = await _build_flows_download_response(async_session, flows, caller_id=uuid4())
+        body = b"".join([chunk async for chunk in response.body_iterator])
+
+        with zipfile.ZipFile(io.BytesIO(body)) as zf:
+            names = zf.namelist()
+            zf.extractall(tmp_path)
+
+>       assert len(set(names)) == 2, f"ZIP entries collide: {names}"
+E       AssertionError: ZIP entries collide: ['Q1_Q2.json', 'Q1_Q2.json']
+E       assert 1 == 2
+E        +  where 1 = len({'Q1_Q2.json'})
+E        +    where {'Q1_Q2.json'} = set(['Q1_Q2.json', 'Q1_Q2.json'])
+
+src/backend/tests/unit/api/v1/test_flows_download_zip.py:24: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /home/avalm/langflow/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+src/backend/tests/unit/api/v1/test_flows_download_zip.py::test_download_zip_when_two_flow_names_sanitize_to_same_filename_keeps_both_flows
+  /usr/lib/python3.14/zipfile/__init__.py:1721: UserWarning: Duplicate name: 'Q1_Q2.json'
+    return self._open_to_write(zinfo, force_zip64=force_zip64)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED src/backend/tests/unit/api/v1/test_flows_download_zip.py::test_download_zip_when_two_flow_names_sanitize_to_same_filename_keeps_both_flows
+======================== 1 failed, 2 warnings in 1.94s =========================
