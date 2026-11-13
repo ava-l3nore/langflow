@@ -1063,10 +1063,14 @@ async def _build_flows_download_response(
     if len(normalised_flows) > 1:
         zip_stream = io.BytesIO()
         with zipfile.ZipFile(zip_stream, "w") as zip_file:
+            used_names: set[str] = set()
             for flow_dict in normalised_flows:
                 flow_json = orjson_dumps(flow_dict, sort_keys=True)
                 raw_name = str(flow_dict.get("name", "flow"))
                 safe_name = _sanitize_flow_filename(raw_name, str(flow_dict.get("id", "flow")))
+                if safe_name in used_names:
+                    safe_name = f"{safe_name}_{flow_dict.get('id', len(used_names))}"
+                used_names.add(safe_name)
                 zip_file.writestr(f"{safe_name}.json", flow_json)
 
         zip_stream.seek(0)
