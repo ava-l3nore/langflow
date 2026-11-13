@@ -1,0 +1,1429 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/avalm/langflow
+configfile: pyproject.toml
+plugins: langflow-sdk-0.4.0, locust-2.47.0, json-report-1.5.0, sugar-1.1.1, anyio-4.14.2, xdist-3.8.0, instafail-0.5.0, hypothesis-6.161.7, github-actions-annotate-failures-0.4.2, opik-2.2.7, mock-3.15.1, Faker-40.36.0, split-0.11.0, profiling-1.8.1, lfx-1.13.2, typeguard-4.6.0, langsmith-0.10.10, codeflash-benchmark-0.3.0, cov-7.1.0, flakefinder-1.1.0, metadata-3.1.1, rerunfailures-16.4, asyncio-1.4.0, respx-0.23.1, pyleak-0.2.0, timeout-2.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+timeout: 90.0s
+timeout method: thread
+timeout func_only: False
+collected 407 items
+
+src/backend/tests/unit/api/v1/test_flows_helpers.py::test_new_flow_with_validate_folder_rejects_unknown_folder PASSED [  0%]
+src/backend/tests/unit/api/v1/test_flows_helpers.py::test_patch_flow_non_owner_cannot_change_a2a PASSED [  0%]
+src/backend/tests/unit/api/v1/test_flows_helpers.py::test_update_existing_flow_non_owner_cannot_change_a2a PASSED [  0%]
+src/backend/tests/unit/api/v1/test_flows_helpers.py::test_save_flow_to_fs_returns_500_on_os_error PASSED [  0%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_absolute_path_outside_allowed_directory PASSED [  1%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_accepts_absolute_path_within_allowed_directory PASSED [  1%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_directory_traversal PASSED [  1%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_backslash_directory_traversal PASSED [  1%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_windows_backslash_traversal PASSED [  2%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_multiple_traversal PASSED [  2%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_traversal_in_subpath PASSED [  2%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_null_bytes PASSED [  2%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_empty_path PASSED [  3%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_accepts_simple_relative_path PASSED [  3%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_accepts_nested_relative_path PASSED [  3%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_accepts_deeply_nested_path PASSED [  3%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_path_is_user_isolated PASSED [  4%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_handles_leading_slash_in_relative_path PASSED [  4%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_accepts_paths_with_double_slash PASSED [  4%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_accepts_valid_filename_characters PASSED [  4%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_path_resolves_within_base_directory PASSED [  5%]
+src/backend/tests/unit/api/v1/test_flows_path_validation.py::TestPathValidation::test_rejects_symlink_to_prefix_collision_sibling PASSED [  5%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_allows_read[read] PASSED [  5%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[write] PASSED [  5%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[create] PASSED [  6%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[delete] PASSED [  6%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[execute] PASSED [  6%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[ingest] PASSED [  6%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[deploy] PASSED [  7%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[read] PASSED [  7%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[write] PASSED [  7%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[create] PASSED [  7%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[delete] PASSED [  8%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[execute] PASSED [  8%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[ingest] PASSED [  8%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_denies_deploy PASSED [  8%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[read] PASSED [  9%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[write] PASSED [  9%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[create] PASSED [  9%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[delete] PASSED [  9%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[execute] PASSED [ 10%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[ingest] PASSED [ 10%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[deploy] PASSED [ 10%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[read] PASSED [ 10%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[write] PASSED [ 11%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[create] PASSED [ 11%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[delete] PASSED [ 11%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[execute] PASSED [ 11%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[ingest] PASSED [ 12%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[deploy] PASSED [ 12%]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_filter_actions_through_editor_ceiling_keeps_delete_drops_deploy PASSED [ 12%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_values_match_policy_strings PASSED [ 12%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_subclasses_str PASSED [ 13%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_is_iterable_and_complete PASSED [ 13%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_values_match_policy_strings PASSED [ 13%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_subclasses_str PASSED [ 13%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_is_iterable_and_complete PASSED [ 14%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_knowledge_base_action_values PASSED [ 14%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_variable_action_values PASSED [ 14%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_file_action_values PASSED [ 14%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_share_action_values PASSED [ 14%]
+src/backend/tests/unit/services/authorization/test_actions.py::test_new_actions_subclass_str PASSED [ 15%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_mode_is_explicitly_disabled_by_default PASSED [ 15%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_call_returns_only_after_its_batch_is_persisted[asyncio] PASSED [ 15%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_backpressures_at_capacity_instead_of_dropping[asyncio] PASSED [ 15%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_failure_is_sanitized_and_propagated_to_the_caller[asyncio] PASSED [ 16%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_caller_timeout_does_not_cancel_an_accepted_persistence[asyncio] PASSED [ 16%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_shutdown_gives_inflight_and_queued_entries_terminal_failures[asyncio] PASSED [ 16%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_shutdown_rejects_a_producer_blocked_on_full_capacity[asyncio] PASSED [ 16%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_post_drain_rejection_does_not_restart_writer[asyncio] PASSED [ 17%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_cancelled_capacity_waiter_is_never_admitted[asyncio] PASSED [ 17%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_runs_when_authz_disabled_but_audit_on[asyncio] PASSED [ 17%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_noop_when_audit_disabled[asyncio] PASSED [ 17%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_enqueues_when_enabled[asyncio] PASSED [ 18%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_api_key_actor_is_captured_centrally_and_preserves_owner[asyncio] PASSED [ 18%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_jwt_and_system_actor_identity_are_derived_per_queued_entry[asyncio] PASSED [ 18%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_public_principal_uses_stable_non_user_audit_actor[asyncio] PASSED [ 18%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_invalid_api_key_actor_uuid_is_safely_dropped[asyncio] PASSED [ 19%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_flush_batch_maps_actor_fields_to_model[asyncio] PASSED [ 19%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_flush_batch_stages_plugin_events_in_same_transaction[asyncio] PASSED [ 19%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_batches_multiple_entries[asyncio] PASSED [ 19%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_idle_drain_keeps_durable_admission_terminal[asyncio] PASSED [ 20%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_ensure_permission_fails_closed_on_plugin_exception[asyncio] PASSED [ 20%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_stage_audit_decision_uses_caller_transaction PASSED [ 20%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_stage_audit_decision_preserves_best_effort_pipeline PASSED [ 20%]
+src/backend/tests/unit/services/authorization/test_audit.py::test_new_loop_replaces_idle_drained_pipeline PASSED [ 21%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_runs_cleanup_repeatedly_on_schedule PASSED [ 21%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_is_noop_when_retention_disabled PASSED [ 21%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_is_noop_when_audit_disabled PASSED [ 21%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_start_stop_and_idempotency PASSED [ 22%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_survives_cleanup_failure PASSED [ 22%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_interval_resolution_prefers_override PASSED [ 22%]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_prunes_old_rows_on_schedule PASSED [ 22%]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_prunes_rows_past_retention[asyncio] PASSED [ 23%]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_zero_disables_retention[asyncio] PASSED [ 23%]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_empty_table[asyncio] PASSED [ 23%]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_passthrough_warning_emitted_when_authz_enabled[asyncio] PASSED [ 23%]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_passthrough_warning_silent_when_authz_disabled[asyncio] PASSED [ 24%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_enforce_allows_all_when_disabled[asyncio] PASSED [ 24%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_enforce_allows_non_superuser_when_enabled[asyncio] PASSED [ 24%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_is_enabled_reflects_setting[asyncio] PASSED [ 24%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_all_true_when_disabled[asyncio] PASSED [ 25%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_allows_non_superuser_when_enabled[asyncio] PASSED [ 25%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_empty_requests[asyncio] PASSED [ 25%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_get_allowed_actions_returns_all_actions[asyncio] PASSED [ 25%]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_get_allowed_actions_returns_all_when_disabled[asyncio] PASSED [ 26%]
+src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_user_is_noop[asyncio] PASSED [ 26%]
+src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_role_is_noop[asyncio] PASSED [ 26%]
+src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_all_is_noop[asyncio] PASSED [ 26%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_base_class_default_is_false[asyncio] PASSED [ 27%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_public_principal_contract_is_explicit_and_defaults_deny[asyncio] PASSED [ 27%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_lfx_default_service_does_not_support_cross_user_fetch[asyncio] PASSED [ 27%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_lfx_default_targeted_share_hooks_are_noops[asyncio] PASSED [ 27%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_langflow_pass_through_does_not_support_cross_user_fetch[asyncio] PASSED [ 28%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_subclass_can_opt_in[asyncio] PASSED [ 28%]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_share_rule_snapshot_is_framework_neutral_and_immutable PASSED [ 28%]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_denies_before_body[asyncio] PASSED [ 28%]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_maps_forbidden_to_value_error[asyncio] PASSED [ 28%]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_rejects_none_flow_id_before_body[asyncio] PASSED [ 29%]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_resource_param_rejects_missing_id_before_body[asyncio] PASSED [ 29%]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_raises_on_missing_user_param PASSED [ 29%]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_raises_on_missing_flow_id_param PASSED [ 29%]
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_resolve_authz_domain_precedence PASSED [ 30%]
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_parses_uuid_suffix PASSED [ 30%]
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_wildcard_returns_none_id PASSED [ 30%]
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_malformed_returns_nones PASSED [ 30%]
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_non_uuid_suffix_returns_none_id PASSED [ 31%]
+src/backend/tests/unit/services/authorization/test_factory.py::test_create_returns_base_authorization_service PASSED [ 31%]
+src/backend/tests/unit/services/authorization/test_factory.py::test_create_uses_injected_settings_service PASSED [ 31%]
+src/backend/tests/unit/services/authorization/test_factory.py::test_factory_name_matches_service_type PASSED [ 31%]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_owner_scoped_when_service_does_not_support_cross_user_fetch[asyncio] PASSED [ 32%]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_id_only_when_service_supports_cross_user_fetch[asyncio] PASSED [ 32%]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_write_fetch_refreshes_identity_map_and_locks_row[asyncio] PASSED [ 32%]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_deny_to_404_only_rewrites_403 PASSED [ 32%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_noop_when_disabled[asyncio] PASSED [ 33%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_empty_returns_empty[asyncio] PASSED [ 33%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_filters_via_batch_enforce[asyncio] PASSED [ 33%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_accepts_custom_key[asyncio] PASSED [ 33%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_groups_by_extracted_domain[asyncio] PASSED [ 34%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_owner_override_skips_enforcer[asyncio] PASSED [ 34%]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_api_key_scope_plugin_evaluates_owned_rows[asyncio] PASSED [ 34%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[create_flow-FlowAction.CREATE] PASSED [ 34%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[read_flow-FlowAction.READ] PASSED [ 35%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[update_flow-FlowAction.WRITE] PASSED [ 35%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[delete_flow-FlowAction.DELETE] PASSED [ 35%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[create_flows-FlowAction.CREATE] PASSED [ 35%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[upload_file-FlowAction.CREATE] PASSED [ 36%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_guards_both_create_and_write PASSED [ 36%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_delete_multiple_flows_guards_each_flow PASSED [ 36%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_download_multiple_file_guards_each_flow PASSED [ 36%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_create_flows_guards_each_flow_with_its_destination PASSED [ 37%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upload_file_guards_each_flow_with_effective_destination PASSED [ 37%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_update_flow_authorizes_destination_on_move PASSED [ 37%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_update_branch_authorizes_destination_on_move PASSED [ 37%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_reauthorizes_fresh_source_and_destination PASSED [ 38%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_no_bare_string_actions_remain PASSED [ 38%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_read_public_flow_remains_unguarded PASSED [ 38%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_get_note_translations_is_owner_scoped_and_guarded PASSED [ 38%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_read_flows_list_uses_filter_visible_resources PASSED [ 39%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path0-build_flow] PASSED [ 39%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path1-retrieve_vertices_order] PASSED [ 39%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path2-build_vertex] PASSED [ 39%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path3-simplified_run_flow] PASSED [ 40%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path4-simplified_run_flow_session] PASSED [ 40%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path5-webhook_run_flow] PASSED [ 40%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path6-experimental_run_flow] PASSED [ 40%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[bare-name-call-to-module-helper] PASSED [ 41%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[guard-only-in-uncalled-closure] PASSED [ 41%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[attribute-call-sharing-a-helper-name] PASSED [ 41%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[call-inside-a-lambda] PASSED [ 41%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_voice_build_seam_reaches_the_same_execute_guard PASSED [ 42%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_check_flow_user_permission_is_gone PASSED [ 42%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[create_project-ProjectAction.CREATE] PASSED [ 42%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[read_project-ProjectAction.READ] PASSED [ 42%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[update_project-ProjectAction.WRITE] PASSED [ 42%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[delete_project-ProjectAction.DELETE] PASSED [ 43%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[download_file-ProjectAction.READ] PASSED [ 43%]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[upload_file-ProjectAction.CREATE] PASSED [ 43%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_connection_owner_and_scoped_api_key_personas[asyncio] PASSED [ 43%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_noop_when_disabled[asyncio] PASSED [ 44%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_allows_when_enforce_returns_true[asyncio] PASSED [ 44%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_caller_context_cannot_override_is_superuser[asyncio] PASSED [ 44%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_raises_403_with_non_disclosing_default[asyncio] PASSED [ 44%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_accepts_explicit_detail_override[asyncio] PASSED [ 45%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_writes_audit_on_allow[asyncio] PASSED [ 45%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_writes_audit_on_deny[asyncio] PASSED [ 45%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_forwards_auth_context[asyncio] PASSED [ 45%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_accepts_enum[asyncio] PASSED [ 46%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_accepts_string_for_backcompat[asyncio] PASSED [ 46%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_computes_workspace_domain[asyncio] PASSED [ 46%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_falls_back_to_project_domain[asyncio] PASSED [ 46%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_project_beats_workspace[asyncio] PASSED [ 47%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_wildcard_domain_when_neither_set[asyncio] PASSED [ 47%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_owner_override_skips_enforce[asyncio] PASSED [ 47%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_api_key_scope_plugin_sees_owner_resource_instead_of_owner_override[asyncio] PASSED [ 47%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_external_viewer_ceiling_denies_before_owner_override[asyncio] PASSED [ 48%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_external_editor_ceiling_allows_write_then_owner_override[asyncio] PASSED [ 48%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_owner_override_audits_even_when_authz_disabled[asyncio] PASSED [ 48%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_non_owner_falls_through_to_enforce[asyncio] PASSED [ 48%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_batches_flow_ids[asyncio] PASSED [ 49%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_raises_when_any_denied[asyncio] PASSED [ 49%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_fails_closed_on_result_count_mismatch[asyncio] PASSED [ 49%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_applies_external_ceiling_when_authz_disabled[asyncio] PASSED [ 49%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_owner_override_skips_batch[asyncio] PASSED [ 50%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_forwards_same_context_as_single_flow_check[asyncio] PASSED [ 50%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_accepts_enum[asyncio] PASSED [ 50%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_uses_project_domain[asyncio] PASSED [ 50%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_project_owner_override_skips_enforce[asyncio] PASSED [ 51%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_create_uses_wildcard_obj[asyncio] PASSED [ 51%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_create_uses_workspace_domain[asyncio] PASSED [ 51%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_deployment_permission_uses_project_domain[asyncio] PASSED [ 51%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_deployment_owner_override_skips_enforce[asyncio] PASSED [ 52%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_provider_account_owner_and_scoped_api_key_personas[asyncio] PASSED [ 52%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_voice_owner_and_scoped_api_key_personas[asyncio] PASSED [ 52%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_uses_kb_id_object_slug[asyncio] PASSED [ 52%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_owner_override[asyncio] PASSED [ 53%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_denied_raises_403[asyncio] PASSED [ 53%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_create_permission_ignores_prospective_owner[asyncio] PASSED [ 53%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_variable_permission_uses_variable_object_slug[asyncio] PASSED [ 53%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_variable_permission_owner_override[asyncio] PASSED [ 54%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_variable_create_permission_ignores_prospective_owner[asyncio] PASSED [ 54%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_create_audits_allow_when_enforcement_is_disabled[asyncio] PASSED [ 54%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_file_permission_uses_file_object_slug[asyncio] PASSED [ 54%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_file_permission_owner_override[asyncio] PASSED [ 55%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_file_create_permission_ignores_prospective_owner[asyncio] PASSED [ 55%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_share_permission_uses_share_object_slug[asyncio] PASSED [ 55%]
+src/backend/tests/unit/services/authorization/test_guards.py::test_share_create_permission_uses_existing_resource_owner_override[asyncio] PASSED [ 55%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_guard_decisions_are_tagged_as_decisions PASSED [ 56%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_decision_and_mutation_markers_are_distinct PASSED [ 56%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_readable_resource_keeps_the_403 PASSED [ 56%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_unreadable_resource_still_masks_as_404 PASSED [ 56%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_service_failure_during_the_read_check_is_not_a_404 PASSED [ 57%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_non_403_is_surfaced_unchanged PASSED [ 57%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_flow_spec_inherits_ownership_from_the_destination_project PASSED [ 57%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_create_in_owned_project_takes_the_owner_override PASSED [ 57%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_create_in_someone_elses_project_still_reaches_the_policy PASSED [ 57%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_capability_probe_writes_no_decision_row PASSED [ 58%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_probe_suppression_does_not_leak_past_the_scope PASSED [ 58%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[False-False] PASSED [ 58%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[True-False] PASSED [ 58%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[False-True] PASSED [ 59%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_owner_override_is_resolved_without_consulting_policy PASSED [ 59%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_write_holder_may_override_someone_elses_flow PASSED [ 59%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_execute_only_caller_may_not_override PASSED [ 59%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[service] PASSED [ 60%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[supports_cross_user_fetch] PASSED [ 60%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[is_enabled] PASSED [ 60%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_execute_only_run_keeps_going_with_the_stored_graph PASSED [ 60%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_owner_keeps_their_unsaved_canvas PASSED [ 61%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_a_run_with_no_override_is_untouched PASSED [ 61%]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_event_class_filter_selects_and_never_hides_untagged_rows PASSED [ 61%]
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_projects_prefilter_excludes_unlisted_null_owner_project
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:10 [    INFO] Context impl SQLiteImpl. (migration.py:210)
+2026-11-13 07:07:10 [    INFO] Will assume non-transactional DDL. (migration.py:213)
+2026-11-13 07:07:10 [    INFO] Context impl SQLiteImpl. (migration.py:210)
+2026-11-13 07:07:10 [    INFO] Will assume non-transactional DDL. (migration.py:213)
+2026-11-13 07:07:10 [    INFO] Context impl SQLiteImpl. (migration.py:210)
+2026-11-13 07:07:10 [    INFO] Will assume non-transactional DDL. (migration.py:213)
+2026-11-13 07:07:10 [    INFO] Running upgrade  -> 260dbcc8b680, Adds tables (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 260dbcc8b680 -> 67cc006d50bf, Add profile-image column (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 67cc006d50bf -> eb5866d51fd2, Change columns to be nullable (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade eb5866d51fd2 -> 7843803a87b5, Store updates (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 7843803a87b5 -> f5ee9749d1a6, User id can be null in Flow (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade f5ee9749d1a6 -> 7d2162acc8b2, Adds updated_at and folder cols (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 7d2162acc8b2 -> 2ac71eb9c3ae, Adds Credential table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 2ac71eb9c3ae -> fd531f8868b1, Fix Credential table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade fd531f8868b1 -> 1ef9c4f3765d, Revision ID: 1ef9c4f3765d
+Revises: fd531f8868b1
+Create Date: 2023-12-04 15:00:27.968998 (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 1ef9c4f3765d -> 006b3990db50, Add unique constraints (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 006b3990db50 -> 0b8757876a7c, empty message (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 0b8757876a7c -> b2fa308044b5, Add unique constraints. (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade b2fa308044b5 -> bc2f01c40e4a, New fixes (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade bc2f01c40e4a -> 63b9c451fd30, Add icon and icon_bg_color to Flow (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 63b9c451fd30 -> 1a110b568907, Replace Credential table with Variable (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 1a110b568907 -> e3bc869fa272, Fix nullable (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade e3bc869fa272 -> 79e675cb6752, Change datetime type (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 79e675cb6752 -> 4e5980a44eaa, Fix date times again. (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 4e5980a44eaa -> 58b28437a398, Modify nullable (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 58b28437a398 -> 6e7b581b5648, Fix nullable (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 6e7b581b5648 -> 1f4d6df60295, Add default_fields column (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 1f4d6df60295 -> c153816fd85f, Set name and value to not nullable (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade c153816fd85f -> 012fb73ac359, Add Folder table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 012fb73ac359 -> 29fe8f1f806b, Add missing index (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 29fe8f1f806b -> a72f5cf9c2f9, Add endpoint name col (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade a72f5cf9c2f9 -> 3bb0ddf32dfb, Add unique constraints per user in flow table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 3bb0ddf32dfb -> 1c79524817ed, Add unique constraints per user in folder table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 1c79524817ed -> 631faacf5da2, Add webhook columns (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 631faacf5da2 -> 325180f0c4e1, Add message table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 325180f0c4e1 -> 90be8e2ed91e, create transactions table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 90be8e2ed91e -> 0d60fcbd4e8e, create vertex_builds table (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 0d60fcbd4e8e -> 4522eb831f5c, Update description columns type (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 4522eb831f5c -> e5a65ecff2cd, nullable in vertex build (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade e5a65ecff2cd -> d3dbf656a499, add gradient column in Flow (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade d3dbf656a499 -> d2d475a1f7c0, add tags column to flow (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade d2d475a1f7c0 -> 0ae3a2674f32, Update the columns that need to change their type to text (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 0ae3a2674f32 -> 5ace73a7f223, new remove table upgrade op (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 5ace73a7f223 -> eb5e72293a8e, Add error and edit flags to message (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade eb5e72293a8e -> 1eab2c3eb45e, event_error (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade 1eab2c3eb45e -> e3162c1804e6, add persistent locked state (migration.py:621)
+2026-11-13 07:07:10 [    INFO] Running upgrade e3162c1804e6 -> dd9e0804ebd1, Add V2 File Table (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade dd9e0804ebd1 -> 93e2705fa8d6, Add column fs_path to Flow (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 93e2705fa8d6 -> f3b2d1f1002d, add column 'access_type' to flow (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade f3b2d1f1002d -> 1b8b740a6fa3, remove fk constraint in message transaction and vertex build (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 1b8b740a6fa3 -> e56d87f8994a, add_optins_column_to_user (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade e56d87f8994a -> 66f72f04a1de, Add MCP support with project settings in flows (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 66f72f04a1de -> d9a6ea21edcd, Rename default folder (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 0ae3a2674f32, d9a6ea21edcd -> 3162e83e485f, Add auth_settings column to folder table and merge migration branches. (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 3162e83e485f -> 1cb603706752, Modify uniqueness constraint on file names (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Starting upgrade: adding composite unique (name, user_id) on file (1cb603706752_modify_uniqueness_constraint_on_file_.py:178)
+2026-11-13 07:07:11 [    INFO] Scanning for duplicate file names per user... (1cb603706752_modify_uniqueness_constraint_on_file_.py:111)
+2026-11-13 07:07:11 [    INFO] No duplicates found. (1cb603706752_modify_uniqueness_constraint_on_file_.py:124)
+2026-11-13 07:07:11 [    INFO] Creating composite unique: file_name_user_id_key on (name, user_id) (1cb603706752_modify_uniqueness_constraint_on_file_.py:207)
+2026-11-13 07:07:11 [    INFO] Upgrade completed successfully in 0.03 seconds (1cb603706752_modify_uniqueness_constraint_on_file_.py:217)
+2026-11-13 07:07:11 [    INFO] Running upgrade 1cb603706752 -> 0882f9657f22, Encrypt existing MCP auth_settings credentials (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 0882f9657f22 -> d37bc4322900, Drop single constraint on file.name column (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running migration on sqlite database (d37bc4322900_drop_single_constraint_on_files_name_.py:36)
+2026-11-13 07:07:11 [    INFO] SQLite: Recreating table to remove single UNIQUE constraint on name (d37bc4322900_drop_single_constraint_on_files_name_.py:41)
+2026-11-13 07:07:11 [    INFO] SQLite: Successfully recreated file table without single UNIQUE constraint on name (d37bc4322900_drop_single_constraint_on_files_name_.py:82)
+2026-11-13 07:07:11 [    INFO] Running upgrade d37bc4322900 -> 182e5471b900, add context_id to message table (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 182e5471b900 -> 369268b9af8b, add job_id to vertex_build, create job status table. (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 369268b9af8b -> b1c2d3e4f5a6, add SSO plugin tables sso_user_profile and sso_config (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade b1c2d3e4f5a6 -> 169b35510b37, added job_type to make jobs generic and user_id for ownership (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 169b35510b37 -> 26ef53e27502, adding asset_id and asset_type to job table for polymorphism of jobs. (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 26ef53e27502, b1c2d3e4f5a6 -> c187c3b9bb94, merge_job_asset_and_sso_heads (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade c187c3b9bb94 -> 3478f0bd6ccb, Add trace and span tables for native tracing (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 3478f0bd6ccb -> 7d327cfafab6, add flow_version table (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 7d327cfafab6 -> 8106300be7aa, Add deployment provider account table (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 8106300be7aa -> 2a5defa5ddc0, Add deployment table (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 3478f0bd6ccb -> 59a272d6669a, Ensure trace.flow_id foreign key has ondelete CASCADE (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 59a272d6669a, 2a5defa5ddc0 -> fc7f696a57bf, Merge cascade fix and flow version branches (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade fc7f696a57bf -> 0e6138e7a0c2, Add ondelete CASCADE to file.user_id FK (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade 0e6138e7a0c2 -> ef4b036b585d, Add session_metadata column to message table (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade ef4b036b585d -> c0d2ce43b315, add flow_version_deployment_attachment table, deployment_type and description columns (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade c0d2ce43b315 -> a1b2c3d4e5f6, convert provider_key and deployment_type to enum columns (migration.py:621)
+2026-11-13 07:07:11 [    INFO] Running upgrade a1b2c3d4e5f6 -> 8255e9fc18d9, add name to deployment_provider_account (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 8255e9fc18d9 -> d306e5c17c41, add api_key_hash column to apikey table (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d306e5c17c41 -> mb00a1b2c3d4, add_memory_base_schema (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade mb00a1b2c3d4 -> b4c2f8e9a1d3, Ensure message ingestion records keep their message FK (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b4c2f8e9a1d3 -> kb1a2b3c4d5e, Add knowledge_base + ingestion_run schema and job.job_metadata. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade kb1a2b3c4d5e -> mb01b2c3d4e5, add_preprocessing_output (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade mb01b2c3d4e5 -> f6b3ce6845d4, add expires_at to api_key table (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f6b3ce6845d4 -> 7c8d9e0f1a2b, Authz foundations: tables, workspace_id columns, and built-in system roles. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 7c8d9e0f1a2b -> c35e9db03a66, make api_key expires_at timezone aware (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c35e9db03a66 -> b7c4d8e9f012, rename deployment name to display_name (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b7c4d8e9f012 -> 4f0d2c9a8b7e, Backfill flow:create on built-in system roles. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b7c4d8e9f012 -> e1705947c729, Ensure span.trace_id foreign key has ondelete CASCADE (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 4f0d2c9a8b7e, e1705947c729 -> 844cad9a53fa, merge alembic heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 844cad9a53fa -> c3e7a1b9d2f4, Normalize legacy uppercase spanstatus/spantype enum labels to lowercase (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c3e7a1b9d2f4 -> 185482a2d715, add result and error columns to job table. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 185482a2d715 -> b026885b89c8, add job_events table for durable background-job event log. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b026885b89c8 -> 8ce44e4858c6, add execution_signals table for cooperative job control. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c3e7a1b9d2f4 -> 247308ce2598, add mcp_server table (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 4f0d2c9a8b7e -> 9b3e7c1f0a52, add user_id to message table (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9b3e7c1f0a52 -> b2c72e1e1439, scope embedded agent chat-history in legacy flows (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b2c72e1e1439, c3e7a1b9d2f4 -> 12a64232053f, merge chat history scope and span enum heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 12a64232053f, 247308ce2598 -> b7f91a2c4d6e, merge security and mcp server heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 247308ce2598, 8ce44e4858c6 -> 9d5e24d777bf, merge_mcp_and_execution_signals_heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 8ce44e4858c6 -> c7412b389256, hitl suspended status and pause resume signals. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c7412b389256 -> a1f4c9d27b30, add job_checkpoints table for durable suspend/resume checkpoints. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9d5e24d777bf, a1f4c9d27b30 -> 9cbe2f682e12, merge hitl checkpoints and release heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a1f4c9d27b30 -> 9f1d1d602aa3, add flow_type and a2a columns to flow (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9f1d1d602aa3 -> 142ba6cd9317, add a2a_tasks table for durable A2A protocol task storage. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 142ba6cd9317 -> a2c8f1e3b4d6, add a2a_checkpoints table for durable HITL resume of A2A tasks. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a2c8f1e3b4d6 -> c4e9a1b7d2f6, add created_at/updated_at to a2a_tasks so the table can be pruned by age. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9cbe2f682e12, c4e9a1b7d2f6 -> acfad963ce75, merge a2a tasks timestamps and hitl heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9d5e24d777bf, b7f91a2c4d6e -> 0819aa415ead, merge security and release 1.11 heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 0819aa415ead -> 47aca8c17d23, Backfill legacy message ownership from the owning flow. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 47aca8c17d23, 9cbe2f682e12 -> 5e6d61582763, merge message user id and hitl heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 5e6d61582763, acfad963ce75 -> d19e7b3c5a42, merge a2a and message user id heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d19e7b3c5a42 -> a6c4e2f8b1d3, Add first-class actor identity to authorization audit rows. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a6c4e2f8b1d3 -> b7d5f9a3c2e4, Synchronize denormalized flow workspace ids from their projects. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b7d5f9a3c2e4 -> e9f2a3b4c5d6, update SSO identity, connection, and protocol contracts (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b7d5f9a3c2e4 -> cp01a2b3c4d5, Add independent provenance sources for effective role assignments. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade cp01a2b3c4d5 -> cp02a2b3c4d5, Backfill existing effective role assignments with manual grant sources. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade cp02a2b3c4d5 -> cp03a2b3c4d5, Allow skipped authorization reconciliation audit outcomes. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade cp03a2b3c4d5 -> e8f1a2b3c4d5, Add the install-wide model-provider policy store. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade e8f1a2b3c4d5 -> d4a7c9e1b2f6, Add catalog policy rules for component and template governance. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d4a7c9e1b2f6, e9f2a3b4c5d6 -> f0a1b2c3d4e5, merge SSO identity and catalog policy heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f0a1b2c3d4e5 -> 7c8e9f0a1b2d, add database enforcement for SSO configuration invariants (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 7c8e9f0a1b2d -> 8d9e0f1a2b3c, complete rolling-compatible SSO schema expansion (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 8d9e0f1a2b3c -> f7a9c2d4e6b8, Add immutable shared provider and catalog policy bundles. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f7a9c2d4e6b8 -> a3f8b1c9d7e2, Add blocked model keys to policy bundle revisions. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a3f8b1c9d7e2 -> c6d8e0f2a4b7, add SSO identity display details (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c6d8e0f2a4b7 -> d7e9f1a3b5c8, Track environment-managed variable values. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c6d8e0f2a4b7 -> b8e1d4f6a2c9, Add independent provenance sources for effective Team membership. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b8e1d4f6a2c9 -> c9f2e5a7b1d4, Normalize legacy administration wildcard permissions. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c9f2e5a7b1d4, d7e9f1a3b5c8 -> e8f0a2c4d6b9, Merge environment-variable and administration migration heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d7e9f1a3b5c8 -> a1b2c9d3e4f5, Index the message columns every history read filters and sorts on. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade e8f0a2c4d6b9 -> f3b6a9d2e4c1, Add connection metadata and encrypted credential tables. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f3b6a9d2e4c1 -> a7d8e9f0b1c2, Add durable one-time OAuth consent bindings. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a7d8e9f0b1c2 -> b4c7d2e8f1a3, Add integration governance to policy bundle revisions. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a1b2c9d3e4f5, b4c7d2e8f1a3 -> d2f6a8c1e9b4, Merge the 1.12.2 message history and 1.13.0 integration governance heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d2f6a8c1e9b4 -> 1d28fd31a982, Enforce case-insensitive username uniqueness. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a7d8e9f0b1c2 -> b7c4e1a9d3f2, Add the trigger entity, event ledger, and trigger leases. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b7c4e1a9d3f2, b4c7d2e8f1a3 -> c5a8e2f7d9b1, Merge trigger and integration governance migration heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c5a8e2f7d9b1, 1d28fd31a982 -> e6f9a2b4c8d1, Merge the trigger ledger and release 1.13.0 migration heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a1b2c9d3e4f5 -> 386662af02e9, Pin existing OpenSearch and Chroma Cloud knowledge bases to their pre-scoping storage. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 386662af02e9, e6f9a2b4c8d1 -> 9d7e2a6c4b81, Merge the release 1.12.3 and 1.13.0 migration heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9d7e2a6c4b81 -> f2a7c9e4b681, Adopt SQLModel's timezone-aware datetime storage. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f2a7c9e4b681 -> d8f2c3a4b5e6, Mark per-user default projects as personal. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c6d8e0f2a4b7 -> 439697865628, add flow version token and last modified by (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 439697865628, e8f0a2c4d6b9 -> 9b6b6666bd71, merge flow version token into release heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 9b6b6666bd71, a7d8e9f0b1c2 -> 3c1f5a90d2e7, merge flow version token with the connections heads (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 3c1f5a90d2e7, d8f2c3a4b5e6 -> 4e7a2b9c1d05, merge flow version token with the personal default projects head (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f2a7c9e4b681 -> a7c9e4b681f2, Retain trigger source versions across event-ledger purges. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a7c9e4b681f2, d8f2c3a4b5e6 -> b6e2d4f8a901, Merge trigger source versions and personal project migration heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b6e2d4f8a901 -> d7f1b5c9a203, Persist remote trigger cleanup independently of deleted flow rows. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d7f1b5c9a203, 4e7a2b9c1d05 -> e8c2a6f4b709, Merge trigger cleanup and flow-version migration histories. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade e8c2a6f4b709 -> f9d3b7a5c201, Bound cleanup access-token retention after user deletion. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f9d3b7a5c201 -> f194a1b2c3d4, Add durable project replacement receipts. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f9d3b7a5c201 -> c3e1d5a7f902, Add user.retired_at. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c3e1d5a7f902, f194a1b2c3d4 -> b5d8e2a4c617, Merge the retired superuser and atomic project replacement migration histories. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade f2a7c9e4b681 -> b3f7c2a91d48, Index job status and timestamps for the background metrics collector. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b3f7c2a91d48, d8f2c3a4b5e6 -> c7e9b2d4f6a8, Merge background job metrics and personal default project migrations. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c7e9b2d4f6a8, 4e7a2b9c1d05 -> e2c4a6f8b0d3, Merge background job metrics and release migration heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade e2c4a6f8b0d3, c3e1d5a7f902, f194a1b2c3d4 -> a6d8e0f2b4c7, Merge background metrics, user retirement, and project replacement heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a6d8e0f2b4c7, b5d8e2a4c617 -> d6f8a0c2e4b9, Merge background metrics and the release migration merge heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d6f8a0c2e4b9 -> b8e1f3a5c709, Preserve background-job metric totals after retention deletes job history. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b8e1f3a5c709 -> c91d2e3f4a50, Fence legacy stores and persist resumable local storage upgrades. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c91d2e3f4a50 -> d42f18a9b760, Retain migration evidence and pending Memory session purges. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b5d8e2a4c617 -> df1410b1eefa, Add the append-only audit_events table. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade df1410b1eefa -> 27727fccba3e, Index audit_events by (timestamp, id) for the unified audit feed. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 27727fccba3e, d42f18a9b760 -> f3a9c1d7b025, Merge the audit events and storage retirement heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b8e1f3a5c709 -> 6db8617a3585, Add the data_subject_request table for GDPR access and erasure requests. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade 6db8617a3585 -> a7c2e94d1f36, Add user_id and session_id to transaction so a data subject erase can find a person's rows. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade a7c2e94d1f36, f3a9c1d7b025 -> b4e8d2f1c9a3, Merge the transaction attribution and audit events heads. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade b4e8d2f1c9a3 -> d4f1a6c8e2b7, Add authz_access_exception for per-resource role-access revocation. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade d4f1a6c8e2b7 -> c4d8e2f6a1b7, Index messages by flow and session so session lists avoid scanning the table. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade c4d8e2f6a1b7 -> e5a7c9b1d3f2, Add retained flag to flow_version. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade e5a7c9b1d3f2 -> e4f6a8b2c1d3, Track the registration of the last completed OAuth grant. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Running upgrade e4f6a8b2c1d3 -> f5a7b9c2d4e6, Persist native refresh sessions and revocations after logout. (migration.py:621)
+2026-11-13 07:07:12 [    INFO] Context impl SQLiteImpl. (migration.py:210)
+2026-11-13 07:07:12 [    INFO] Will assume non-transactional DDL. (migration.py:213)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.schemas (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.tables (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.types (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.constraints (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.defaults (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.comments (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] Context impl SQLiteImpl. (migration.py:210)
+2026-11-13 07:07:13 [    INFO] Will assume non-transactional DDL. (migration.py:213)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.schemas (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.tables (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.types (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.constraints (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.defaults (plugins.py:119)
+2026-11-13 07:07:13 [    INFO] setting up autogenerate plugin alembic.autogenerate.comments (plugins.py:119)
+2026-11-13 07:07:31 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 61%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:33 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_projects_prefilter_includes_null_owner_project_when_plugin_lists_it
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:33 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:34 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 62%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:35 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_flows_prefilter_excludes_unlisted_null_owner_flow_under_auto_login
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:35 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:36 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 62%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:37 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_flows_prefilter_includes_null_owner_flow_when_plugin_lists_it
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:37 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:38 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 62%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:39 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_flow_workspace_prefilter_uses_project_workspace_not_denormalized_flow_value
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:39 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:39 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 62%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:40 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_shared_project_flow_listing_uses_project_workspace_for_both_response_shapes
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:41 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:41 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 63%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:43 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_shared_project_flow_listing_excludes_personal_projects_for_both_response_shapes
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:43 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:43 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 63%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:45 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_shared_unassigned_project_pagination_compiles_safely_for_asyncpg
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:45 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:46 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 63%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:47 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_shared_project_get_does_not_delete_flows_hidden_from_response
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:47 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:48 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 63%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:49 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_public_grants_only_confer_read_and_execute_actions PASSED [ 64%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_read_share_does_not_confer_execute_but_execute_share_includes_read PASSED [ 64%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_anonymous_execution_user_is_stable_and_non_privileged PASSED [ 64%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_compatibility_grants_cannot_bypass_action_floor[asyncio-WRITE] PASSED [ 64%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_compatibility_grants_cannot_bypass_action_floor[asyncio-CREATE] PASSED [ 65%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_compatibility_grants_cannot_bypass_action_floor[asyncio-DELETE] PASSED [ 65%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_compatibility_grants_cannot_bypass_action_floor[asyncio-DEPLOY] PASSED [ 65%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_compatibility_grants_cannot_bypass_action_floor[asyncio-ADMIN] PASSED [ 65%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_a2a_compatibility_grant_allows_execute_when_no_public_share[asyncio] PASSED [ 66%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_canonical_read_share_bounds_a_still_public_legacy_flow[asyncio] PASSED [ 66%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_canonical_read_share_also_bounds_the_a2a_compatibility_grant[asyncio] PASSED [ 66%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_deleting_the_share_falls_back_to_the_documented_legacy_grant[asyncio] PASSED [ 66%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_report_the_same_decision_the_guard_would_make[asyncio-execute-False-expected0] PASSED [ 67%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_report_the_same_decision_the_guard_would_make[asyncio-read-False-expected1] PASSED [ 67%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_report_the_same_decision_the_guard_would_make[asyncio-read-True-expected2] PASSED [ 67%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_report_the_same_decision_the_guard_would_make[asyncio-None-True-expected3] PASSED [ 67%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_report_the_same_decision_the_guard_would_make[asyncio-None-False-expected4] PASSED [ 68%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_are_advisory_and_never_audited[asyncio] PASSED [ 68%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_capabilities_fail_closed_when_an_enabled_plugin_denies[asyncio] PASSED [ 68%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_enabled_authorization_plugin_controls_public_execution[asyncio-allow] PASSED [ 68%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_enabled_authorization_plugin_controls_public_execution[asyncio-unsupported] PASSED [ 69%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_enabled_authorization_plugin_controls_public_execution[asyncio-missing_tenant] PASSED [ 69%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_enabled_authorization_plugin_controls_public_execution[asyncio-deny] PASSED [ 69%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_enabled_authorization_plugin_controls_public_execution[asyncio-error] PASSED [ 69%]
+src/backend/tests/unit/services/authorization/test_public_access_contract.py::test_enabled_authorization_plugin_controls_public_execution[asyncio-service_unavailable] PASSED [ 70%]
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_viewer_can_read_and_execute_but_not_write_delete_or_create
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:49 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:50 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 70%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:52 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_developer_can_write_and_create_but_not_delete
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:52 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:52 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 70%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:54 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_admin_has_full_flow_access
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:54 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:54 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 70%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:56 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_share_grants_cross_user_access_and_absence_is_404
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:56 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:57 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 71%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:07:58 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_shared_flow_reads_strip_owner_credentials_without_mutating_owner_view
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:07:58 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:07:59 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 71%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:01 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_read_only_share_allows_get_but_denies_write_and_execute
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:01 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:02 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 71%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:03 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_project_scoped_developer_can_create_flow_in_foreign_project
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:03 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:04 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 71%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:05 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_flow_created_in_foreign_project_is_owned_by_the_project_owner
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:05 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:06 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 71%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:08 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_oss_create_flow_keeps_foreign_project_owner_scoped
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:08 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:09 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 72%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:10 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_cross_user_destination_resolution_does_not_widen_flow_moves
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:10 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:11 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 72%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:12 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_domain_scoped_role_applies_only_in_matching_domain
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:12 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:13 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 72%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:14 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_roleless_user_cannot_create_files_or_knowledge_bases
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:14 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:15 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 72%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:17 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_rbac_enforcement_integration.py::test_developer_can_create_files_and_knowledge_bases
+-------------------------------- live log setup --------------------------------
+2026-11-13 07:08:17 [ WARNING] Attempting to instrument while already instrumented (instrumentor.py:93)
+2026-11-13 07:08:18 [    INFO] StreamableHTTP session manager started (streamable_http_manager.py:164)
+PASSED                                                                   [ 73%]
+------------------------------ live log teardown -------------------------------
+2026-11-13 07:08:20 [    INFO] StreamableHTTP session manager shutting down (streamable_http_manager.py:168)
+
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_call_tool_viewer_denied_before_run[asyncio] PASSED [ 73%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_call_tool_owner_runs_without_ceiling[asyncio] PASSED [ 73%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_create_snapshot_viewer_denied[asyncio] PASSED [ 73%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_delete_viewer_denied[asyncio] PASSED [ 74%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_create_snapshot_owner_proceeds[asyncio] PASSED [ 74%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_upload_viewer_denied[asyncio] PASSED [ 74%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_delete_viewer_denied[asyncio] PASSED [ 74%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_delete_owner_proceeds[asyncio] PASSED [ 75%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_create_viewer_denied[asyncio] PASSED [ 75%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_delete_viewer_denied[asyncio] PASSED [ 75%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_flush_viewer_denied[asyncio] PASSED [ 75%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_regenerate_viewer_denied[asyncio] PASSED [ 76%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_delete_owner_proceeds[asyncio] PASSED [ 76%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_viewer_denied_before_build[asyncio] PASSED [ 76%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_update_viewer_denied_before_build[asyncio] PASSED [ 76%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_editor_passes_ceiling[asyncio] PASSED [ 77%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_deprecated_upload_viewer_denied[asyncio] PASSED [ 77%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_deprecated_upload_owner_proceeds[asyncio] PASSED [ 77%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_update_settings_viewer_denied[asyncio] PASSED [ 77%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_update_enabled_models_viewer_denied[asyncio] PASSED [ 78%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_set_default_model_viewer_denied[asyncio] PASSED [ 78%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_clear_default_model_viewer_denied[asyncio] PASSED [ 78%]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_set_default_model_owner_proceeds[asyncio] PASSED [ 78%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_flows_paginated_branch_passes_owner_extractor PASSED [ 79%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_upsert_flow_consults_cross_user_fetch_capability PASSED [ 79%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_upsert_flow_wraps_ensure_in_deny_to_404 PASSED [ 79%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_delete_multiple_flows_does_not_unconditionally_prescope PASSED [ 79%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_download_multiple_file_does_not_unconditionally_prescope PASSED [ 80%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_project_paginated_branch_filters_via_filter_visible_resources PASSED [ 80%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_flows_wires_db_layer_prefilter PASSED [ 80%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_projects_wires_db_layer_prefilter PASSED [ 80%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_project_wires_db_layer_prefilter PASSED [ 81%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_list_deployments_threads_prefilter_into_synced_query PASSED [ 81%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_list_deployments_relaxes_provider_gate_on_prefilter PASSED [ 81%]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_load_flow_calls_ensure_flow_permission PASSED [ 81%]
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_source_kind_schema_matches_migration PASSED [ 82%]
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_manual_and_directory_grants_share_one_effective_membership PASSED [ 82%]
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_removing_one_source_preserves_effective_membership PASSED [ 82%]
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_reconciliation_is_idempotent_and_source_scoped PASSED [ 82%]
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_reconciliation_refreshes_legacy_membership_source PASSED [ 83%]
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_groups_are_independent_grant_sources PASSED [ 83%]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_file_list_uses_global_structured_visibility[asyncio] PASSED [ 83%]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_file_list_excludes_reserved_mcp_file_for_every_owner[asyncio] PASSED [ 83%]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_knowledge_base_list_forwards_concrete_structured_visibility[asyncio] PASSED [ 84%]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_memory_base_list_forwards_structured_visibility[asyncio] PASSED [ 84%]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_variable_list_forwards_global_structured_visibility[asyncio] PASSED [ 84%]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_unscoped_visibility_uses_global_and_concrete_grants_but_not_domain_grants PASSED [ 84%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_visible_scope_prefilter_forwards_structured_scope[asyncio] PASSED [ 85%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_visible_scope_prefilter_adapts_legacy_concrete_id_service[asyncio] PASSED [ 85%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_scope_predicate_unions_owner_explicit_workspace_and_project_grants PASSED [ 85%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_does_not_emit_an_unbounded_id_list PASSED [ 85%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_excludes_reserved_projects_but_keeps_owner_share_and_folderless PASSED [ 85%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_combines_reserved_project_and_resource_exclusions PASSED [ 86%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_unassigned_workspace_scope_uses_a_compact_null_predicate PASSED [ 86%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_workspace_scope_sql_matches_in_memory_for_project_nulls_and_exclusions PASSED [ 86%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_excluded_resource_ids_wins_over_global_wildcard_but_not_ownership PASSED [ 86%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_excluded_resource_ids_wins_over_a_workspace_grant PASSED [ 87%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_empty_excluded_resource_ids_is_a_complete_no_op PASSED [ 87%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_scope_reports_cross_user_access_without_resource_enumeration PASSED [ 87%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-project] PASSED [ 87%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-flow] PASSED [ 88%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-deployment] PASSED [ 88%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-project] PASSED [ 88%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-flow] PASSED [ 88%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-deployment] PASSED [ 89%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-project] PASSED [ 89%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-flow] PASSED [ 89%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-deployment] PASSED [ 89%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[global] PASSED [ 90%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[workspace] PASSED [ 90%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[unassigned] PASSED [ 90%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_explicit_project_grant_survives_global_reserved_project_exclusion[False] PASSED [ 90%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_explicit_project_grant_survives_global_reserved_project_exclusion[True] PASSED [ 91%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[global] PASSED [ 91%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[workspace] PASSED [ 91%]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[unassigned] PASSED [ 91%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_none_when_disabled[asyncio] PASSED [ 92%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_none_when_plugin_declines[asyncio] PASSED [ 92%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_concrete_list_and_forwards_args[asyncio] PASSED [ 92%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_default_domain_and_act[asyncio] PASSED [ 92%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_apply_owned_or_visible_prefilter_unions_when_override_on[asyncio] PASSED [ 93%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_apply_owned_or_visible_prefilter_skips_owner_when_override_off[asyncio] PASSED [ 93%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_restrict_to_owned_or_visible_unions_ids_and_owner PASSED [ 93%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_restrict_to_owned_or_visible_empty_ids_keeps_owner_rows PASSED [ 93%]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_helpers_are_exported_from_package PASSED [ 94%]
+src/backend/tests/unit/api/v1/test_read_flow_or_public.py::test_read_flow_or_public_when_user_owns_private_flow_returns_flow PASSED [ 94%]
+src/backend/tests/unit/api/v1/test_read_flow_or_public.py::test_read_flow_or_public_when_other_users_flow_is_public_returns_flow PASSED [ 94%]
+src/backend/tests/unit/api/v1/test_read_flow_or_public.py::test_read_flow_or_public_when_public_flow_has_no_owner_returns_flow PASSED [ 94%]
+src/backend/tests/unit/api/v1/test_read_flow_or_public.py::test_read_flow_or_public_when_private_flow_has_no_owner_returns_none PASSED [ 95%]
+src/backend/tests/unit/api/v1/test_read_flow_or_public.py::test_read_flow_or_public_when_other_users_flow_is_private_returns_none PASSED [ 95%]
+src/backend/tests/unit/api/v1/test_read_flow_or_public.py::test_read_flow_or_public_when_flow_id_does_not_exist_returns_none PASSED [ 95%]
+src/backend/tests/unit/api/v1/test_deduplicate_flow_name.py::test_deduplicate_flow_name_when_name_unused_returns_name_unchanged PASSED [ 95%]
+src/backend/tests/unit/api/v1/test_deduplicate_flow_name.py::test_deduplicate_flow_name_when_name_used_once_appends_one PASSED [ 96%]
+src/backend/tests/unit/api/v1/test_deduplicate_flow_name.py::test_deduplicate_flow_name_when_copies_have_gaps_uses_highest_plus_one PASSED [ 96%]
+src/backend/tests/unit/api/v1/test_deduplicate_flow_name.py::test_deduplicate_flow_name_when_suffix_is_not_a_number_ignores_it PASSED [ 96%]
+src/backend/tests/unit/api/v1/test_deduplicate_flow_name.py::test_deduplicate_flow_name_when_other_user_has_same_name_returns_name_unchanged PASSED [ 96%]
+src/backend/tests/unit/api/v1/test_deduplicate_flow_name.py::test_deduplicate_flow_name_when_conflict_and_fail_on_conflict_raises409 PASSED [ 97%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_is_plain_returns_it_unchanged PASSED [ 97%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_has_path_characters_replaces_them[a/b-a_b] PASSED [ 97%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_has_path_characters_replaces_them[a\\b-a_b] PASSED [ 97%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_has_path_characters_replaces_them[../etc/passwd-__etc_passwd] PASSED [ 98%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_has_path_characters_replaces_them[bad\x00name-badname] PASSED [ 98%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_windows_device_name_prefixes_underscore[CON-_CON] PASSED [ 98%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_windows_device_name_prefixes_underscore[nul.json-_nul.json] PASSED [ 98%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_windows_device_name_prefixes_underscore[COM1-_COM1] PASSED [ 99%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_is_only_whitespace_returns_fallback PASSED [ 99%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_name_is_none_returns_string_none PASSED [ 99%]
+src/backend/tests/unit/api/v1/test_sanitize_flow_filename.py::test_sanitize_flow_filename_when_different_names_collide_returns_same_filename PASSED [ 99%]
+src/backend/tests/unit/api/v1/test_flows_download_zip.py::test_download_zip_when_two_flow_names_sanitize_to_same_filename_keeps_both_flows PASSED [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /home/avalm/langflow/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.14.4-final-0 ________________
+
+Name                                                                                              Stmts   Miss Branch BrPart  Cover
+-----------------------------------------------------------------------------------------------------------------------------------
+src/backend/base/langflow/base/data/utils.py                                                          1      1      0      0     0%
+src/backend/base/langflow/base/io/chat.py                                                             1      1      0      0     0%
+src/backend/base/langflow/base/io/text.py                                                             1      1      0      0     0%
+src/backend/base/langflow/base/prompts/api_utils.py                                                   1      1      0      0     0%
+src/backend/base/langflow/custom/custom_component/component_with_cache.py                             1      1      0      0     0%
+src/backend/base/langflow/custom/custom_component/custom_component.py                                 1      1      0      0     0%
+src/backend/base/langflow/custom/utils.py                                                             1      1      0      0     0%
+src/backend/base/langflow/custom/validate.py                                                          1      1      0      0     0%
+src/backend/base/langflow/interface/components.py                                                     1      1      0      0     0%
+src/backend/base/langflow/interface/listing.py                                                        1      1      0      0     0%
+src/backend/base/langflow/interface/utils.py                                                          1      1      0      0     0%
+src/backend/base/langflow/schema/dataframe.py                                                         1      0      0      0   100%
+src/backend/base/langflow/schema/image.py                                                             1      1      0      0     0%
+src/backend/base/langflow/template/field/base.py                                                      1      1      0      0     0%
+src/backend/base/langflow/template/frontend_node.py                                                   1      1      0      0     0%
+src/backend/base/langflow/template/utils.py                                                           1      1      0      0     0%
+src/backend/base/langflow/utils/lazy_load.py                                                          1      1      0      0     0%
+src/backend/base/langflow/utils/mustache_security.py                                                  1      1      0      0     0%
+src/backend/base/langflow/events/event_manager.py                                                     2      0      0      0   100%
+src/backend/base/langflow/field_typing/range_spec.py                                                  2      2      0      0     0%
+src/backend/base/langflow/inputs/constants.py                                                         2      2      0      0     0%
+src/backend/base/langflow/inputs/input_mixin.py                                                       2      2      0      0     0%
+src/backend/base/langflow/inputs/inputs.py                                                            2      2      0      0     0%
+src/backend/base/langflow/inputs/validators.py                                                        2      2      0      0     0%
+src/backend/base/langflow/io/schema.py                                                                2      2      0      0     0%
+src/backend/base/langflow/schema/content_block.py                                                     2      0      0      0   100%
+src/backend/base/langflow/schema/data.py                                                              2      0      0      0   100%
+src/backend/base/langflow/schema/graph.py                                                             2      0      0      0   100%
+src/backend/base/langflow/schema/message.py                                                           2      0      0      0   100%
+src/backend/base/langflow/schema/schema.py                                                            2      0      0      0   100%
+src/backend/base/langflow/schema/serialize.py                                                         2      0      0      0   100%
+src/backend/base/langflow/schema/table.py                                                             2      2      0      0     0%
+src/backend/base/langflow/serialization/constants.py                                                  2      0      0      0   100%
+src/backend/base/langflow/services/database/constants.py                                              2      0      0      0   100%
+src/backend/base/langflow/services/settings/base.py                                                   2      2      0      0     0%
+src/backend/base/langflow/services/settings/factory.py                                                2      2      0      0     0%
+src/backend/base/langflow/services/settings/feature_flags.py                                          2      2      0      0     0%
+src/backend/base/langflow/services/settings/service.py                                                2      0      0      0   100%
+src/backend/base/langflow/services/storage/utils.py                                                   2      2      0      0     0%
+src/backend/base/langflow/services/triggers/source_errors.py                                          2      2      0      0     0%
+src/backend/base/langflow/services/variable/constants.py                                              2      0      0      0   100%
+src/backend/base/langflow/utils/connection_string_parser.py                                           2      2      0      0     0%
+src/backend/base/langflow/utils/util.py                                                               2      2      0      0     0%
+src/backend/base/langflow/utils/validate.py                                                           2      2      0      0     0%
+src/backend/base/langflow/agentic/mcp/__main__.py                                                     3      3      2      0     0%
+src/backend/base/langflow/custom/custom_component/component.py                                        3      3      0      0     0%
+src/backend/base/langflow/services/auth/constants.py                                                  3      0      0      0   100%
+src/backend/base/langflow/services/database/models/deployment_provider_account/schemas.py             3      0      0      0   100%
+src/backend/base/langflow/services/shared_component_cache/service.py                                  3      0      0      0   100%
+src/backend/base/langflow/utils/constants.py                                                          3      0      0      0   100%
+src/backend/base/langflow/api/schemas.py                                                              4      0      0      0   100%
+src/backend/base/langflow/initial_setup/constants.py                                                  4      0      0      0   100%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/models.py             4      4      0      0     0%
+src/backend/base/langflow/services/chat/schema.py                                                     4      4      0      0     0%
+src/backend/base/langflow/services/database/models/flow/schema.py                                     4      4      0      0     0%
+src/backend/base/langflow/services/database/models/folder/constants.py                                4      0      0      0   100%
+src/backend/base/langflow/api/v1/policy_bundle_errors.py                                              5      1      0      0    80%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/register.py                5      5      0      0     0%
+src/backend/base/langflow/services/database/models/folder/pagination_model.py                         5      0      0      0   100%
+src/backend/base/langflow/services/tracing/validation.py                                              6      4      2      0    25%
+src/backend/base/langflow/settings.py                                                                 6      6      0      0     0%
+src/backend/base/langflow/api/v1/schemas/public_flows.py                                              7      0      0      0   100%
+src/backend/base/langflow/cli/events.py                                                               7      7      0      0     0%
+src/backend/base/langflow/core/celery_app.py                                                          7      7      0      0     0%
+src/backend/base/langflow/schema/encoders.py                                                          7      2      0      0    71%
+src/backend/base/langflow/services/auth/cookies.py                                                    7      0      0      0   100%
+src/backend/base/langflow/services/background_execution/metrics.py                                    7      5      0      0    29%
+src/backend/base/langflow/services/chat/factory.py                                                    7      0      0      0   100%
+src/backend/base/langflow/services/data_subjects/inventory.py                                         7      7      0      0     0%
+src/backend/base/langflow/services/database/migration.py                                              7      0      0      0   100%
+src/backend/base/langflow/services/memory_base/factory.py                                             7      7      0      0     0%
+src/backend/base/langflow/utils/frontend.py                                                           7      5      2      0    22%
+src/backend/base/langflow/agentic/flows/model_config.py                                               8      8      4      0     0%
+src/backend/base/langflow/field_typing/constants.py                                                   8      8      0      0     0%
+src/backend/base/langflow/services/authorization/refusal.py                                           8      1      0      0    88%
+src/backend/base/langflow/services/connection/oauth/locking.py                                        8      2      0      0    75%
+src/backend/base/langflow/services/database/models/flow_version/exceptions.py                         8      0      0      0   100%
+src/backend/base/langflow/agentic/services/user_components_context.py                                 9      3      0      0    67%
+src/backend/base/langflow/api/v1/flow_fork.py                                                         9      1      0      0    89%
+src/backend/base/langflow/initial_setup/load.py                                                       9      9      0      0     0%
+src/backend/base/langflow/logging/setup.py                                                            9      5      2      0    36%
+src/backend/base/langflow/schema/log.py                                                               9      0      0      0   100%
+src/backend/base/langflow/services/database/models/file/crud.py                                       9      9      2      0     0%
+src/backend/base/langflow/services/task/utils.py                                                      9      9      0      0     0%
+src/backend/base/langflow/services/transaction/factory.py                                             9      1      0      0    89%
+src/backend/base/langflow/helpers/custom.py                                                          10      8      6      0    12%
+src/backend/base/langflow/services/database/models/auth/refresh_token.py                             10      0      0      0   100%
+src/backend/base/langflow/services/database/models/base.py                                           10      2      6      3    69%
+src/backend/base/langflow/services/database/models/model_provider_policy/model.py                    10      0      0      0   100%
+src/backend/base/langflow/services/jobs/exceptions.py                                                10      4      0      0    60%
+src/backend/base/langflow/services/jobs/factory.py                                                   10      0      2      1    92%
+src/backend/base/langflow/services/session/factory.py                                                10      0      0      0   100%
+src/backend/base/langflow/services/shared_component_cache/factory.py                                 10      0      0      0   100%
+src/backend/base/langflow/services/state/factory.py                                                  10      1      0      0    90%
+src/backend/base/langflow/services/task/factory.py                                                   10      1      0      0    90%
+src/backend/base/langflow/utils/canonical_json.py                                                    10      2      0      0    80%
+src/backend/base/langflow/exceptions/component.py                                                    11      6      0      0    45%
+src/backend/base/langflow/helpers/folders.py                                                         11      8      2      0    23%
+src/backend/base/langflow/services/connection/factory.py                                             11      1      0      0    91%
+src/backend/base/langflow/services/flow_events/factory.py                                            11     11      0      0     0%
+src/backend/base/langflow/services/session/utils.py                                                  11      4      0      0    64%
+src/backend/base/langflow/services/store/factory.py                                                  11      1      0      0    91%
+src/backend/base/langflow/services/telemetry/factory.py                                              11      0      0      0   100%
+src/backend/base/langflow/services/telemetry_writer/factory.py                                       11      0      0      0   100%
+src/backend/base/langflow/services/tracing/factory.py                                                11      0      0      0   100%
+src/backend/base/langflow/services/triggers/factory.py                                               11     11      0      0     0%
+src/backend/base/langflow/utils/i18n_keys.py                                                         11      4      0      0    64%
+src/backend/base/langflow/services/authorization/factory.py                                          12      0      0      0   100%
+src/backend/base/langflow/services/checkpoint/factory.py                                             12      2      0      0    83%
+src/backend/base/langflow/services/database/factory.py                                               12      2      2      1    79%
+src/backend/base/langflow/services/manager.py                                                        12      7      0      0    42%
+src/backend/base/langflow/agentic/api/deps.py                                                        13      5      4      0    47%
+src/backend/base/langflow/agentic/helpers/streaming_retry.py                                         13      7      2      0    40%
+src/backend/base/langflow/api/limited_background_tasks.py                                            13      8      6      0    26%
+src/backend/base/langflow/api/v2/schemas.py                                                          13      2      0      0    85%
+src/backend/base/langflow/services/catalog_policy/factory.py                                         13      2      0      0    85%
+src/backend/base/langflow/services/database/models/api_key/policy.py                                 13      5      2      0    53%
+src/backend/base/langflow/services/database/models/project_replacement_operation.py                  13      0      0      0   100%
+src/backend/base/langflow/services/task/backends/base.py                                             13      3      0      0    77%
+src/backend/base/langflow/services/tracing/schema.py                                                 13      6      0      0    54%
+src/backend/base/langflow/services/triggers/correlation.py                                           13      7      4      0    35%
+src/backend/base/langflow/services/triggers/errors.py                                                13      4      0      0    69%
+src/backend/base/langflow/logging/logger.py                                                          14      0      0      0   100%
+src/backend/base/langflow/services/auth/factory.py                                                   14      1      0      0    93%
+src/backend/base/langflow/services/authorization/utils.py                                            14      1      0      0    93%
+src/backend/base/langflow/services/data_subjects/user_listing.py                                     14      6      2      0    50%
+src/backend/base/langflow/services/triggers/cleanup.py                                               14      7      4      1    44%
+src/backend/base/langflow/services/variable/factory.py                                               14      2      2      1    81%
+src/backend/base/langflow/initial_setup/starter_projects/basic_prompting.py                          15     15      2      0     0%
+src/backend/base/langflow/interface/run.py                                                           15     15      4      0     0%
+src/backend/base/langflow/services/data_subjects/context.py                                          15      1      0      0    93%
+src/backend/base/langflow/services/data_subjects/lifecycle.py                                        15      6      0      0    60%
+src/backend/base/langflow/services/triggers/listeners/guard.py                                       15      9      4      0    32%
+src/backend/base/langflow/agentic/api/sessions_router.py                                             16      5      0      0    69%
+src/backend/base/langflow/api/global_variable_fields.py                                              16     11      8      0    21%
+src/backend/base/langflow/cli/sqlite_to_postgres_events.py                                           16     16      4      0     0%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/eligibility.py            16     16      6      0     0%
+src/backend/base/langflow/services/background_execution/factory.py                                   16      4      2      0    67%
+src/backend/base/langflow/services/base.py                                                           16      8      4      0    40%
+src/backend/base/langflow/services/data_subjects/transactions.py                                     16      8      2      0    44%
+src/backend/base/langflow/services/job_queue/factory.py                                              16      3      2      1    78%
+src/backend/base/langflow/services/store/exceptions.py                                               16      6      0      0    62%
+src/backend/base/langflow/agentic/helpers/assistant_workspace.py                                     17      8      2      0    47%
+src/backend/base/langflow/cli/relocate_kb_events.py                                                  17     17      2      0     0%
+src/backend/base/langflow/initial_setup/starter_projects/document_qa.py                              17     17      2      0     0%
+src/backend/base/langflow/services/data_subjects/audit_redaction.py                                  17      7      2      0    53%
+src/backend/base/langflow/services/database/models/a2a/model.py                                      17      0      0      0   100%
+src/backend/base/langflow/services/database/models/connection/oauth.py                               17      0      0      0   100%
+src/backend/base/langflow/services/database/models/data_subject_request/schemas.py                   17      0      0      0   100%
+src/backend/base/langflow/services/database/models/flow/guards.py                                    17      7      6      1    48%
+src/backend/base/langflow/agentic/services/flow_graph_build_check.py                                 18     18      0      0     0%
+src/backend/base/langflow/exceptions/serialization.py                                                18     12     10      0    21%
+src/backend/base/langflow/inputs/utils.py                                                            18     18      6      0     0%
+src/backend/base/langflow/services/database/models/file/model.py                                     18      0      0      0   100%
+src/backend/base/langflow/services/database/models/mcp_server/model.py                               18      0      0      0   100%
+src/backend/base/langflow/utils/kb_constants.py                                                      18      0      0      0   100%
+src/backend/base/langflow/api/disconnect.py                                                          19     10      6      0    36%
+src/backend/base/langflow/api/utils/author_names.py                                                  19      8      4      0    48%
+src/backend/base/langflow/core/celeryconfig.py                                                       19     19      4      0     0%
+src/backend/base/langflow/services/authorization/lifecycle.py                                        19     11      0      0    42%
+src/backend/base/langflow/services/cache/factory.py                                                  19      4      6      3    72%
+src/backend/base/langflow/initial_setup/starter_projects/memory_chatbot.py                           20     20      2      0     0%
+src/backend/base/langflow/interface/importing/utils.py                                               20     16      2      0    18%
+src/backend/base/langflow/services/triggers/ownership.py                                             20      7      2      0    59%
+src/backend/base/langflow/worker.py                                                                  20     20      0      0     0%
+src/backend/base/langflow/agentic/services/flow_run_error_classification.py                          21     10      8      0    38%
+src/backend/base/langflow/api/v1/run_validation.py                                                   21     10      8      1    41%
+src/backend/base/langflow/services/authorization/permissions.py                                      21     14      8      0    24%
+src/backend/base/langflow/services/telemetry/context.py                                              21      7      0      0    67%
+src/backend/base/langflow/agentic/services/flow_probe_input.py                                       22     16     10      0    19%
+src/backend/base/langflow/services/data_subjects/audit_events.py                                     22      8      4      0    54%
+src/backend/base/langflow/services/database/models/deployment/guards.py                              22      6      4      1    65%
+src/backend/base/langflow/services/database/models/flow_version_deployment_attachment/schema.py      22     11      4      0    42%
+src/backend/base/langflow/services/telemetry/run_event_store.py                                      22     12      4      0    38%
+src/backend/base/langflow/services/tracing/utils.py                                                  22     22     14      0     0%
+src/backend/base/langflow/api/v1/base.py                                                             23      3      0      0    87%
+src/backend/base/langflow/initial_setup/starter_projects/blog_writer.py                              23     23      2      0     0%
+src/backend/base/langflow/langflow_launcher.py                                                       23     23      2      0     0%
+src/backend/base/langflow/schema/dotdict.py                                                          23     18      4      0    19%
+src/backend/base/langflow/services/authorization/admin.py                                            23     13      6      0    34%
+src/backend/base/langflow/services/database/models/knowledge_base_storage_migration.py               23      0      0      0   100%
+src/backend/base/langflow/agentic/services/request_framing.py                                        24     19     14      0    13%
+src/backend/base/langflow/helpers/windows_postgres_helper.py                                         24     15     10      1    29%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/status.py            24     24      8      0     0%
+src/backend/base/langflow/services/tracing/base.py                                                   24      6      0      0    75%
+src/backend/base/langflow/services/triggers/binding.py                                               24     10      6      0    47%
+src/backend/base/langflow/utils/security_posture.py                                                  24      6      6      3    70%
+src/backend/base/langflow/services/database/models/folder/utils.py                                   25     11      4      0    55%
+src/backend/base/langflow/agentic/flows/translation_flow.py                                          26     26      6      0     0%
+src/backend/base/langflow/api/v1/flow_events.py                                                      26      4      0      0    85%
+src/backend/base/langflow/services/model_provider_policy_scope.py                                    26      1      8      3    88%
+src/backend/base/langflow/api/v1/data_subjects_common.py                                             27     11      4      0    52%
+src/backend/base/langflow/services/auth/exceptions.py                                                27     10      0      0    63%
+src/backend/base/langflow/api/v1/authz_capabilities.py                                               28      7      2      0    70%
+src/backend/base/langflow/api/v1/schemas/replacement_operations.py                                   28      8      4      0    62%
+src/backend/base/langflow/api/v1/validate.py                                                         28     14      2      0    47%
+src/backend/base/langflow/initial_setup/starter_projects/hierarchical_tasks_agent.py                 28     28      0      0     0%
+src/backend/base/langflow/services/authorization/service.py                                          28      2      2      0    93%
+src/backend/base/langflow/services/chat/service.py                                                   28      8      6      1    62%
+src/backend/base/langflow/services/data_subjects/memory_base_storage.py                              28     18      6      0    29%
+src/backend/base/langflow/services/triggers/principal.py                                             28     16      6      0    35%
+src/backend/base/langflow/agentic/helpers/content_safety.py                                          29     11     10      0    46%
+src/backend/base/langflow/api/v2/workflow_host.py                                                    29     16      0      0    45%
+src/backend/base/langflow/initial_setup/starter_projects/sequential_tasks_agent.py                   29     29      0      0     0%
+src/backend/base/langflow/initial_setup/starter_projects/vector_store_rag.py                         29     29      0      0     0%
+src/backend/base/langflow/load/utils.py                                                              29     29      6      0     0%
+src/backend/base/langflow/services/authorization/fetch.py                                            29      0     10      0   100%
+src/backend/base/langflow/services/authorization/flow_data_override.py                               29      0      4      0   100%
+src/backend/base/langflow/services/authorization/invalidation.py                                     29     29      0      0     0%
+src/backend/base/langflow/services/storage/factory.py                                                29      5      2      1    81%
+src/backend/base/langflow/agentic/services/component_events.py                                       30     21     10      0    22%
+src/backend/base/langflow/api/v1/schemas/catalog_policy.py                                           30      2      0      0    93%
+src/backend/base/langflow/exceptions/api.py                                                          30      8      4      0    65%
+src/backend/base/langflow/helpers/user.py                                                            30     23     10      0    18%
+src/backend/base/langflow/services/data_subjects/account.py                                          30     30      4      0     0%
+src/backend/base/langflow/services/data_subjects/end_user_search.py                                  30     15      8      0    39%
+src/backend/base/langflow/services/schema.py                                                         30      0      0      0   100%
+src/backend/base/langflow/utils/voice_utils.py                                                       30     15      2      0    47%
+src/backend/base/langflow/services/database/models/flow/utils.py                                     31     21     18      2    29%
+src/backend/base/langflow/api/v1/projects_audits.py                                                  32      8      0      0    75%
+src/backend/base/langflow/middleware.py                                                              32      5      6      2    82%
+src/backend/base/langflow/services/database/models/deployment/exceptions.py                          32     20     10      0    29%
+src/backend/base/langflow/services/database/models/jobs/crud.py                                      32     18     10      0    38%
+src/backend/base/langflow/utils/migration.py                                                         32      6      8      2    80%
+src/backend/base/langflow/agentic/mcp/support.py                                                     33     33     20      0     0%
+src/backend/base/langflow/agentic/utils/template_create.py                                           33     33      8      0     0%
+src/backend/base/langflow/api/utils/migration_jobs.py                                                33     17      4      0    43%
+src/backend/base/langflow/api/v1/flows_audits.py                                                     33      9      0      0    73%
+src/backend/base/langflow/api/v1/model_options.py                                                    33     18      6      0    38%
+src/backend/base/langflow/initial_setup/starter_projects/complex_agent.py                            33     33      0      0     0%
+src/backend/base/langflow/services/database/models/jobs/metrics.py                                   33     20      4      0    35%
+src/backend/base/langflow/services/database/models/transactions/crud.py                              33     23      6      0    26%
+src/backend/base/langflow/services/knowledge_base_storage/inventory.py                               33     26     12      0    16%
+src/backend/base/langflow/api/v1/schemas/authz_teams.py                                              34      0      0      0   100%
+src/backend/base/langflow/services/database/models/policy_bundle/model.py                            34      1      0      0    97%
+src/backend/base/langflow/services/memory_base/embedding_helpers.py                                  34     28     18      0    12%
+src/backend/base/langflow/services/variable/base.py                                                  34      2      0      0    94%
+src/backend/base/langflow/type_extraction/type_extraction.py                                         34     34     12      0     0%
+src/backend/base/langflow/agentic/services/agent_run_context.py                                      35     11      2      0    65%
+src/backend/base/langflow/agentic/services/helpers/intent_context.py                                 35     29     14      0    12%
+src/backend/base/langflow/schema/properties.py                                                       35      8      6      0    66%
+src/backend/base/langflow/services/database/models/flow_version_deployment_attachment/model.py       35     12      6      0    56%
+src/backend/base/langflow/services/store/schema.py                                                   35      5      4      0    77%
+src/backend/base/langflow/services/store/utils.py                                                    35     28     12      0    15%
+src/backend/base/langflow/api/v1/custom_component_policy.py                                          36     19      8      1    41%
+src/backend/base/langflow/api/v1/schemas/deployment_snapshot.py                                      36      0      0      0   100%
+src/backend/base/langflow/helpers/base_model.py                                                      36     26     10      0    22%
+src/backend/base/langflow/services/data_subjects/batching.py                                         36     25     10      0    24%
+src/backend/base/langflow/services/database/models/data_subject_request/model.py                     36      0      0      0   100%
+src/backend/base/langflow/services/database/models/deployment/model.py                               36      3      0      0    92%
+src/backend/base/langflow/services/task/backends/celery.py                                           36     27      6      0    21%
+src/backend/base/langflow/services/transaction/service.py                                            36     22     10      0    30%
+src/backend/base/langflow/api/v1/auth_helpers.py                                                     37     30     18      0    13%
+src/backend/base/langflow/api/v1/schemas/authz_roles.py                                              37      4      2      0    85%
+src/backend/base/langflow/api/v1/schemas/authz_shares.py                                             37      8      4      0    71%
+src/backend/base/langflow/services/data_subjects/builder_flow_steps.py                               37     20     10      0    36%
+src/backend/base/langflow/services/triggers/lease_guard.py                                           37     26      8      0    24%
+src/backend/base/langflow/services/triggers/schedule_config.py                                       37     27      8      0    22%
+src/backend/base/langflow/agentic/helpers/input_sanitization.py                                      38     20     12      0    36%
+src/backend/base/langflow/api/v1/schemas/authz_role_assignments.py                                   38      7      4      0    74%
+src/backend/base/langflow/schema/validators.py                                                       38     27     14      0    21%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/constants.py              38     38      0      0     0%
+src/backend/base/langflow/services/authorization/access_ceiling.py                                   38      1      8      1    96%
+src/backend/base/langflow/services/database/models/catalog_policy/model.py                           38      1      0      0    97%
+src/backend/base/langflow/services/database/models/connection/model.py                               38      0      0      0   100%
+src/backend/base/langflow/services/triggers/listeners/replicas.py                                    38     23     10      0    31%
+src/backend/base/langflow/api/utils/mcp/backfill.py                                                  39     17     10      2    53%
+src/backend/base/langflow/services/data_subjects/errors.py                                           39      3      0      0    92%
+src/backend/base/langflow/agentic/api/schemas.py                                                     40     10      4      0    68%
+src/backend/base/langflow/agentic/services/restore_point.py                                          41     34     10      0    14%
+src/backend/base/langflow/api/v1/mappers/deployments/contracts.py                                    41      9      2      0    74%
+src/backend/base/langflow/services/database/models/ingestion_run/model.py                            41      0      0      0   100%
+src/backend/base/langflow/services/knowledge_base_storage/migration_io.py                            41     23     12      1    40%
+src/backend/base/langflow/services/session/service.py                                                41     25     14      0    29%
+src/backend/base/langflow/utils/version.py                                                           41     19      8      2    49%
+src/backend/base/langflow/services/connection/policy.py                                              42     32     18      0    17%
+src/backend/base/langflow/services/database/models/knowledge_base/model.py                           42      0      0      0   100%
+src/backend/base/langflow/agentic/services/flow_types.py                                             43      4      0      0    91%
+src/backend/base/langflow/api/validation_errors.py                                                   43     27     14      0    28%
+src/backend/base/langflow/services/audit/search_sql.py                                               43     13      2      0    67%
+src/backend/base/langflow/agentic/services/flow_agent_model.py                                       44     44     16      0     0%
+src/backend/base/langflow/api/v1/authz_route_dependencies.py                                         44      0      4      0   100%
+src/backend/base/langflow/processing/process.py                                                      44     23     10      0    39%
+src/backend/base/langflow/services/database/lock_retry.py                                            44     13     14      4    64%
+src/backend/base/langflow/services/database/models/variable/model.py                                 44      1      2      1    96%
+src/backend/base/langflow/agentic/flows/flow_builder_assistant.py                                    45     45     12      0     0%
+src/backend/base/langflow/api/v1/folders.py                                                          45     21     12      0    42%
+src/backend/base/langflow/api/v1/model_provider_policy_scope.py                                      45     33     20      0    18%
+src/backend/base/langflow/services/adapters/deployment/context.py                                    45     22      2      0    49%
+src/backend/base/langflow/services/data_subjects/end_user_steps.py                                   45     16      4      0    59%
+src/backend/base/langflow/services/database/models/deployment_provider_account/model.py              45      5      0      0    89%
+src/backend/base/langflow/agentic/helpers/code_extraction.py                                         46     30     16      0    26%
+src/backend/base/langflow/services/audit/attribution.py                                              46     10      8      3    76%
+src/backend/base/langflow/services/data_subjects/identity.py                                         46     24     12      0    38%
+src/backend/base/langflow/utils/image.py                                                             46     46     14      0     0%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/types.py                  47     47      4      0     0%
+src/backend/base/langflow/services/audit/vocabulary.py                                               47      0      0      0   100%
+src/backend/base/langflow/services/data_subjects/expiry.py                                           47     27     10      1    37%
+src/backend/base/langflow/services/database/models/deployment/orm_guards.py                          47     28     24      1    31%
+src/backend/base/langflow/services/database/session.py                                               47     26      0      0    45%
+src/backend/base/langflow/services/triggers/constants.py                                             47      0      0      0   100%
+src/backend/base/langflow/services/data_subjects/dry_run.py                                          48     23      2      0    50%
+src/backend/base/langflow/utils/payload.py                                                           48     48     26      0     0%
+src/backend/base/langflow/api/v1/mappers/deployments/registry.py                                     49     31     12      0    30%
+src/backend/base/langflow/api/v2/workflow_reconstruction.py                                          49     37     22      0    17%
+src/backend/base/langflow/services/audit/retention.py                                                49     14      6      3    69%
+src/backend/base/langflow/services/cache/base.py                                                     49      0      0      0   100%
+src/backend/base/langflow/api/v1/starter_projects.py                                                 50     29     12      0    34%
+src/backend/base/langflow/services/data_subjects/knowledge_base_steps.py                             50     33      8      0    29%
+src/backend/base/langflow/services/database/models/message/crud.py                                   50     33     10      0    28%
+src/backend/base/langflow/services/database/models/vertex_builds/crud.py                             50     39      8      0    19%
+src/backend/base/langflow/agentic/services/flow_static_validation.py                                 51     51      8      0     0%
+src/backend/base/langflow/api/v1/extensions.py                                                       51     26     10      0    41%
+src/backend/base/langflow/api/v1/flow_conflict_routes.py                                             51     23      2      0    53%
+src/backend/base/langflow/services/auth/context.py                                                   51      3     12      2    92%
+src/backend/base/langflow/services/auth/refresh_tokens.py                                            51     28      8      0    39%
+src/backend/base/langflow/services/database/models/flow_version/model.py                             51      5      2      0    87%
+src/backend/base/langflow/api/v1/global_variable_defaults.py                                         52     43     28      0    11%
+src/backend/base/langflow/services/database/models/api_key/model.py                                  52     10      4      0    75%
+src/backend/base/langflow/services/database/models/vertex_builds/model.py                            52     17     10      0    56%
+src/backend/base/langflow/utils/registered_email_util.py                                             52     52     10      0     0%
+src/backend/base/langflow/agentic/utils/flow_graph.py                                                53     53     14      0     0%
+src/backend/base/langflow/services/warm_registry/resolver.py                                         53     43     20      0    14%
+src/backend/base/langflow/agentic/services/helpers/event_consumer.py                                 54     47     22      0     9%
+src/backend/base/langflow/api/utils/zip_utils.py                                                     54     38     14      0    24%
+src/backend/base/langflow/api/v1/flow_conflict.py                                                    54     26     14      3    46%
+src/backend/base/langflow/agentic/services/flow_validation.py                                        55     55     14      0     0%
+src/backend/base/langflow/services/database/models/user/crud.py                                      55     12     14      4    74%
+src/backend/base/langflow/services/triggers/leases.py                                                55     16     12      2    64%
+src/backend/base/langflow/services/memory_base/provider_scope.py                                     56     30     12      0    38%
+src/backend/base/langflow/services/tracing/span_sorting.py                                           56     56     24      0     0%
+src/backend/base/langflow/services/authorization/actions.py                                          58      0      0      0   100%
+src/backend/base/langflow/services/database/models/audit_event/model.py                              59      6      2      0    87%
+src/backend/base/langflow/api/log_router.py                                                          60     45     34      0    16%
+src/backend/base/langflow/services/checkpoint/store.py                                               60     36     12      0    33%
+src/backend/base/langflow/services/knowledge_base_storage/cleanup.py                                 60     49     22      0    13%
+src/backend/base/langflow/services/triggers/providers/slack/ingress.py                               60     31     10      0    41%
+src/backend/base/langflow/agentic/services/conversation_buffer.py                                    61     37     14      0    32%
+src/backend/base/langflow/api/v1/data_subjects_self.py                                               61     30      6      0    46%
+src/backend/base/langflow/schema/artifact.py                                                         61     40     26      0    24%
+src/backend/base/langflow/services/data_subjects/end_user_memory.py                                  61     40     22      0    25%
+src/backend/base/langflow/services/task/service.py                                                   61     41      8      0    29%
+src/backend/base/langflow/services/triggers/providers/slack/filters.py                               61     48     26      0    15%
+src/backend/base/langflow/api/utils/execution_principal.py                                           62      7     12      6    82%
+src/backend/base/langflow/api/v1/callback.py                                                         62     62      8      0     0%
+src/backend/base/langflow/cli/admin/config.py                                                        63     41     16      0    28%
+src/backend/base/langflow/services/database/models/folder/model.py                                   63      6      6      3    87%
+src/backend/base/langflow/services/state/service.py                                                  63     40     16      0    29%
+src/backend/base/langflow/agentic/api/files_router.py                                                64     48     18      0    20%
+src/backend/base/langflow/services/database/models/user/model.py                                     64      0      0      0   100%
+src/backend/base/langflow/services/rate_limit/service.py                                             64     29     22      5    49%
+src/backend/base/langflow/services/storage/service.py                                                65     26      2      0    58%
+src/backend/base/langflow/utils/mcp_cleanup.py                                                       65     20     18      6    66%
+src/backend/base/langflow/agentic/helpers/sse.py                                                     66     53     32      0    13%
+src/backend/base/langflow/services/chat/cache.py                                                     66     66     12      0     0%
+src/backend/base/langflow/api/utils/execution_errors.py                                              67     39     26      0    30%
+src/backend/base/langflow/services/data_subjects/schemas.py                                          67     11      6      0    77%
+src/backend/base/langflow/services/task/backends/anyio.py                                            67     45     12      0    28%
+src/backend/base/langflow/services/data_subjects/stop.py                                             68     42     16      0    31%
+src/backend/base/langflow/services/flow_events/service.py                                            69     43      8      0    34%
+src/backend/base/langflow/services/memory_base/preprocessing.py                                      69     50     24      0    20%
+src/backend/base/langflow/api/utils/mcp/agentic_mcp.py                                               70     21     16      5    70%
+src/backend/base/langflow/services/creation_hooks.py                                                 70     33      8      0    47%
+src/backend/base/langflow/services/tracing/http_instrumentation.py                                   70     70     16      0     0%
+src/backend/base/langflow/services/triggers/ingress/intake.py                                        70     41     14      0    35%
+src/backend/base/langflow/services/triggers/providers/slack/config.py                                70     52     26      0    19%
+src/backend/base/langflow/services/variable/kubernetes_secrets.py                                    70     70     20      0     0%
+src/backend/base/langflow/services/factory.py                                                        71     10     12      1    87%
+src/backend/base/langflow/services/triggers/source_clients.py                                        71     71     18      0     0%
+src/backend/base/langflow/api/v1/api_key.py                                                          72     51      0      0    29%
+src/backend/base/langflow/services/audit/exclusions.py                                               72     39     18      1    38%
+src/backend/base/langflow/services/task/audit_cleanup.py                                             72      2     16      1    97%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/execution.py         73     73     28      0     0%
+src/backend/base/langflow/services/database/models/deployment_provider_account/utils.py              73     59     26      0    14%
+src/backend/base/langflow/services/memory_base/kb_path_helpers.py                                    73     51     14      0    25%
+src/backend/base/langflow/services/data_subjects/end_user_legacy_copies.py                           74     51     28      0    23%
+src/backend/base/langflow/utils/data_structure.py                                                    74     74     38      0     0%
+src/backend/base/langflow/utils/mcp_config_secrets.py                                                74     55     26      0    19%
+src/backend/base/langflow/api/health_check_router.py                                                 75     49     10      0    31%
+src/backend/base/langflow/api/v1/model_provider_policy.py                                            75     32      6      0    53%
+src/backend/base/langflow/api/v1/authz_audit.py                                                      76     38     28      0    37%
+src/backend/base/langflow/services/data_subjects/builder_account_steps.py                            76     31      6      0    55%
+src/backend/base/langflow/services/memory_base/document_builders.py                                  76     64     34      0    11%
+src/backend/base/langflow/services/model_provider_policy.py                                          76     43     20      2    36%
+src/backend/base/langflow/services/triggers/source_delivery.py                                       76     61     30      0    14%
+src/backend/base/langflow/agentic/services/file_events.py                                            78     62     22      0    16%
+src/backend/base/langflow/api/utils/mcp/discovery.py                                                 78     65     30      0    12%
+src/backend/base/langflow/services/background_execution/executor.py                                  78     37     20      3    49%
+src/backend/base/langflow/services/connection/slack_credentials.py                                   78     61     30      0    16%
+src/backend/base/langflow/services/database/models/jobs/model.py                                     78      0      0      0   100%
+src/backend/base/langflow/services/triggers/ledger.py                                                78     57     16      0    22%
+src/backend/base/langflow/services/triggers/listeners/connection_leases.py                           78     58     16      0    21%
+src/backend/base/langflow/utils/schemas.py                                                           78     78     28      0     0%
+src/backend/base/langflow/agentic/services/helpers/intent_classification.py                          79     65     20      0    14%
+src/backend/base/langflow/api/v2/workflow_public.py                                                  79     55     14      0    26%
+src/backend/base/langflow/api/v2/registration.py                                                     80     58      8      0    25%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/utils.py                  80     80     32      0     0%
+src/backend/base/langflow/api/utils/kb_metadata.py                                                   81     70     42      0     9%
+src/backend/base/langflow/api/v1/authz_me.py                                                         81     42     20      0    39%
+src/backend/base/langflow/api/v1/traces.py                                                           81     54      6      0    31%
+src/backend/base/langflow/services/knowledge_base_storage/application_backup.py                      82     27     24      8    61%
+src/backend/base/langflow/services/triggers/listeners/runtime.py                                     82     66      8      0    18%
+src/backend/base/langflow/api/v1/a2a_utils.py                                                        83     57     16      0    26%
+src/backend/base/langflow/api/v2/workflow_validation.py                                              83     59     40      0    23%
+src/backend/base/langflow/services/audit/writer.py                                                   84     47     16      0    37%
+src/backend/base/langflow/services/task/temp_flow_cleanup.py                                         84     84     24      0     0%
+src/backend/base/langflow/services/data_subjects/worker.py                                           85     16     22      8    74%
+src/backend/base/langflow/helpers/data.py                                                            86     69     32      0    14%
+src/backend/base/langflow/services/cache/utils.py                                                    87     65     32      0    18%
+src/backend/base/langflow/agentic/services/flow_verification.py                                      88     58     30      0    25%
+src/backend/base/langflow/schema/playground_events.py                                                88     24      8      0    67%
+src/backend/base/langflow/api/v1/knowledge_base_storage.py                                           89     50     20      0    36%
+src/backend/base/langflow/services/memory_base/flow_cleanup.py                                       89     60     34      2    25%
+src/backend/base/langflow/processing/expand_flow.py                                                  90     90     26      0     0%
+src/backend/base/langflow/services/database/models/auth/sso_secret.py                                90     59     18      0    29%
+src/backend/base/langflow/services/tracing/repository.py                                             90     73     24      0    15%
+src/backend/base/langflow/services/triggers/listeners/health.py                                      90     69     16      0    20%
+src/backend/base/langflow/utils/component_utils.py                                                   90     90     76      0     0%
+src/backend/base/langflow/services/authorization/public_access.py                                    91      2     20      1    97%
+src/backend/base/langflow/services/task/model_provider_policy_refresh.py                             91     42     22      5    48%
+src/backend/base/langflow/services/triggers/providers/slack/events.py                                91     55     24      0    31%
+src/backend/base/langflow/api/v1/integrations.py                                                     92     35     14      0    54%
+src/backend/base/langflow/services/tracing/formatting.py                                             92     64     30      0    23%
+src/backend/base/langflow/agentic/utils/template_search.py                                           93     93     42      0     0%
+src/backend/base/langflow/api/utils/migration_target.py                                              95     76     44      0    14%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/retry.py             95     95     28      0     0%
+src/backend/base/langflow/services/data_subjects/export.py                                           96     60      8      0    35%
+src/backend/base/langflow/services/database/models/memory_base/model.py                              96     10      6      0    84%
+src/backend/base/langflow/services/knowledge_base_storage/legacy_directories.py                      97     65     28      0    26%
+src/backend/base/langflow/api/router.py                                                              98      3      4      2    95%
+src/backend/base/langflow/agentic/helpers/error_handling.py                                         101     76     50      0    17%
+src/backend/base/langflow/api/utils/migration_copies.py                                             101     78     38      0    17%
+src/backend/base/langflow/services/knowledge_base_storage/retained.py                               101     72     28      0    22%
+src/backend/base/langflow/agentic/services/flow_structural_validation.py                            102     84     46      0    12%
+src/backend/base/langflow/services/triggers/providers/slack/arming.py                               102    102     36      0     0%
+src/backend/base/langflow/services/audit/query.py                                                   103     55     16      0    40%
+src/backend/base/langflow/api/v1/login.py                                                           104     55     24      2    40%
+src/backend/base/langflow/api/v1/store.py                                                           104     72      8      0    29%
+src/backend/base/langflow/services/knowledge_base_storage/automatic.py                              104     86     36      0    13%
+src/backend/base/langflow/agentic/services/user_components.py                                       105     85     32      0    15%
+src/backend/base/langflow/api/warm_graph.py                                                         106     94     60      0     7%
+src/backend/base/langflow/services/triggers/scheduler.py                                            106    106     18      0     0%
+src/backend/base/langflow/services/authorization/decorators.py                                      107     22     44     12    71%
+src/backend/base/langflow/services/database/models/transactions/model.py                            107     52     34      0    39%
+src/backend/base/langflow/api/utils/ingestion_run_service.py                                        109     63     18      0    36%
+src/backend/base/langflow/plugin_routes.py                                                          109     58     32      4    46%
+src/backend/base/langflow/services/audit/details.py                                                 110     49     20      0    47%
+src/backend/base/langflow/services/database/utils.py                                                110     69     24      1    31%
+src/backend/base/langflow/api/v1/agentic_mcp.py                                                     111     69     30      0    30%
+src/backend/base/langflow/cli/admin/directory_reconcile.py                                          111     87     42      0    16%
+src/backend/base/langflow/server.py                                                                 111    111     30      0     0%
+src/backend/base/langflow/services/background_execution/live_bus.py                                 111     83     42      0    18%
+src/backend/base/langflow/services/database/models/trigger/model.py                                 113      0      0      0   100%
+src/backend/base/langflow/services/tracing/native_callback.py                                       114    114      8      0     0%
+src/backend/base/langflow/services/background_execution/metrics_collector.py                        115     83     26      2    24%
+src/backend/base/langflow/api/v1/projects_mcp_helpers.py                                            117     93     40      0    15%
+src/backend/base/langflow/interface/initialize/loading.py                                           117     97     48      0    12%
+src/backend/base/langflow/services/deps.py                                                          117     27      4      1    77%
+src/backend/base/langflow/agentic/services/helpers/flow_loader.py                                   118     98     50      0    12%
+src/backend/base/langflow/services/event_manager.py                                                 118     84     26      1    24%
+src/backend/base/langflow/agentic/utils/component_search.py                                         119    119     58      0     0%
+src/backend/base/langflow/agentic/utils/flow_component.py                                           119    119     32      0     0%
+src/backend/base/langflow/api/utils/migration_probes.py                                             119     91     22      0    20%
+src/backend/base/langflow/api/v1/catalog_policy.py                                                  119     68     20      0    37%
+src/backend/base/langflow/services/database/models/connection/schemas.py                            120     32     16      0    65%
+src/backend/base/langflow/services/telemetry/schema.py                                              120     54     22      0    46%
+src/backend/base/langflow/services/catalog_policy/service.py                                        122     65     30      3    41%
+src/backend/base/langflow/services/tracing/opik.py                                                  122    122     30      0     0%
+src/backend/base/langflow/services/triggers/listeners/subprocess_host.py                            122     92     26      1    21%
+src/backend/base/langflow/services/database/models/deployment_provider_account/crud.py              123     98     18      0    18%
+src/backend/base/langflow/api/v2/hitl.py                                                            124    124     44      0     0%
+src/backend/base/langflow/services/authorization/team_member_grants.py                              128      9     44     10    89%
+src/backend/base/langflow/agentic/services/flow_run.py                                              130    107     50      0    13%
+src/backend/base/langflow/api/v1/projects_files.py                                                  130     99     28      0    20%
+src/backend/base/langflow/services/tracing/langwatch.py                                             130    130     44      0     0%
+src/backend/base/langflow/schema/knowledge_base.py                                                  131     20     12      6    82%
+src/backend/base/langflow/utils/template_validation.py                                              132    132     64      0     0%
+src/backend/base/langflow/agentic/services/flow_executor.py                                         133    112     48      0    12%
+src/backend/base/langflow/api/v1/a2a_executor.py                                                    134     93     42      0    23%
+src/backend/base/langflow/services/authorization/listing.py                                         135      4     64      3    96%
+src/backend/base/langflow/services/database/models/trigger/schemas.py                               135      5      2      0    95%
+src/backend/base/langflow/services/storage/local.py                                                 135     88     26      4    32%
+src/backend/base/langflow/cli/progress.py                                                           136     56     42     13    53%
+src/backend/base/langflow/services/database/models/auth/authz.py                                    136      0      0      0   100%
+src/backend/base/langflow/cli/admin/manifest.py                                                     137     58     14      0    52%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/client.py                137    137     32      0     0%
+src/backend/base/langflow/agentic/services/provider_service.py                                      139    108     48      0    17%
+src/backend/base/langflow/api/utils/migration_pause.py                                              139     94     32      2    27%
+src/backend/base/langflow/services/triggers/source_arming.py                                        140    140     62      0     0%
+src/backend/base/langflow/preload.py                                                                142     85     16      1    38%
+src/backend/base/langflow/agentic/services/user_components_overlay.py                               143    143     58      0     0%
+src/backend/base/langflow/services/database/models/flow_version/crud.py                             143    118     48      0    13%
+src/backend/base/langflow/services/database/models/traces/model.py                                  144     30     18      0    70%
+src/backend/base/langflow/utils/i18n.py                                                             145    112     84      2    17%
+src/backend/base/langflow/services/data_subjects/engine.py                                          146    106     20      0    24%
+src/backend/base/langflow/services/data_subjects/requests.py                                        146    112     22      0    20%
+src/backend/base/langflow/services/flow/flow_runner.py                                              147    147     32      0     0%
+src/backend/base/langflow/services/connection/oauth/config.py                                       149    109     44      0    21%
+src/backend/base/langflow/services/variable/kubernetes.py                                           149    149     40      0     0%
+src/backend/base/langflow/services/auth/mcp_encryption.py                                           150    133     98      0     7%
+src/backend/base/langflow/services/triggers/source_runtime.py                                       150    150     46      0     0%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/shared.py           153    153     40      0     0%
+src/backend/base/langflow/agentic/mcp/server.py                                                     154    154     28      0     0%
+src/backend/base/langflow/api/utils/flow_utils.py                                                   154     81     52      8    39%
+src/backend/base/langflow/services/triggers/listeners/adapters.py                                   154     85     34      0    37%
+src/backend/base/langflow/agentic/utils/assistant_runner.py                                         156    156     52      0     0%
+src/backend/base/langflow/api/v1/schemas/deployments.py                                             158     37     20      0    68%
+src/backend/base/langflow/api/v1/authz_role_assignments.py                                          159    120     40      0    20%
+src/backend/base/langflow/api/v1/flow_version.py                                                    159    102     28      1    31%
+src/backend/base/langflow/services/integration_policy_discovery.py                                  159    111     62      5    24%
+src/backend/base/langflow/api/v1/mappers/deployments/sync.py                                        160    126     40      0    17%
+src/backend/base/langflow/api/v1/trigger_ingress.py                                                 160    125     52      0    17%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/create.py           160    160     30      0     0%
+src/backend/base/langflow/cli/migration_preflight.py                                                161    141     50      0     9%
+src/backend/base/langflow/services/tracing/langsmith.py                                             161    161     52      0     0%
+src/backend/base/langflow/api/v1/audit_reads.py                                                     162     94     34      0    35%
+src/backend/base/langflow/api/v1/triggers.py                                                        162    109     16      0    30%
+src/backend/base/langflow/services/database/models/flow_version_deployment_attachment/crud.py       166    130     30      0    18%
+src/backend/base/langflow/agentic/services/flow_preparation.py                                      168    143     88      0    10%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/config.py           168    168     48      0     0%
+src/backend/base/langflow/schema/content_types.py                                                   169     41     16      0    69%
+src/backend/base/langflow/services/triggers/source_cleanup.py                                       171    137     52      0    15%
+src/backend/base/langflow/services/database/models/api_key/crud.py                                  172    135     62      0    16%
+src/backend/base/langflow/agentic/helpers/validation.py                                             174    148     82      0    10%
+src/backend/base/langflow/services/tracing/native.py                                                174    174     52      0     0%
+src/backend/base/langflow/api/v1/policy_bundle.py                                                   176     85     16      0    47%
+src/backend/base/langflow/api/v1/data_subjects.py                                                   177    122     36      0    26%
+src/backend/base/langflow/api/v2/workflow_background.py                                             177    177     36      0     0%
+src/backend/base/langflow/services/data_subjects/storage_steps.py                                   179    123     58      0    24%
+src/backend/base/langflow/agentic/api/router.py                                                     180    141     62      0    16%
+src/backend/base/langflow/services/tracing/traceloop.py                                             181    181     50      0     0%
+src/backend/base/langflow/services/triggers/service.py                                              185    141     58      0    18%
+src/backend/base/langflow/services/connection/oauth/providers.py                                    186    164     76      0     8%
+src/backend/base/langflow/services/warm_registry/reconcile.py                                       186    186     58      0     0%
+src/backend/base/langflow/api/v1/audits.py                                                          189     91     34      0    45%
+src/backend/base/langflow/services/triggers/source_subscription.py                                  189    189     64      0     0%
+src/backend/base/langflow/services/audit/operations.py                                              191    112     66      5    33%
+src/backend/base/langflow/services/knowledge_base_storage/legacy_sources.py                         198    103     68      8    39%
+src/backend/base/langflow/services/policy_bundle.py                                                 199    120     62      8    35%
+src/backend/base/langflow/services/telemetry/service.py                                             199    120     42      3    34%
+src/backend/base/langflow/api/v1/files.py                                                           200    145     44      0    23%
+src/backend/base/langflow/api/utils/migration_runs.py                                               201    158     58      0    17%
+src/backend/base/langflow/serialization/serialization.py                                            207    163    118      0    14%
+src/backend/base/langflow/services/connection/oauth/broker.py                                       207    176     60      0    12%
+src/backend/base/langflow/services/database/models/deployment/crud.py                               208    163     58      0    17%
+src/backend/base/langflow/api/v1/authz_roles.py                                                     209    164     56      0    17%
+src/backend/base/langflow/api/v1/mcp.py                                                             210     98     24      4    52%
+src/backend/base/langflow/api/v1/memories.py                                                        210    108     28      7    46%
+src/backend/base/langflow/api/v1/variable.py                                                        210    161     70      3    19%
+src/backend/base/langflow/services/telemetry/opentelemetry.py                                       210     61     58     16    66%
+src/backend/base/langflow/api/utils/mcp/flow_secrets.py                                             212    147    104      8    26%
+src/backend/base/langflow/api/utils/core.py                                                         215    116     86      5    39%
+src/backend/base/langflow/services/database/models/message/model.py                                 218    122     78      0    32%
+src/backend/base/langflow/services/database/models/flow/model.py                                    219     49     44     12    70%
+src/backend/base/langflow/services/authorization/guards.py                                          223     18     62      6    92%
+src/backend/base/langflow/api/v1/authz_teams.py                                                     225    176     46      0    18%
+src/backend/base/langflow/services/triggers/reconciliation.py                                       225    168     86      6    22%
+src/backend/base/langflow/api/utils/file_relocation.py                                              227    227     76      0     0%
+src/backend/base/langflow/cli/admin/client.py                                                       227    167     50      0    22%
+src/backend/base/langflow/api/v1/connections.py                                                     230    138     30      0    35%
+src/backend/base/langflow/services/background_execution/runner.py                                   232    192     88      0    12%
+src/backend/base/langflow/services/triggers/ingress/verifiers.py                                    238    166     78      0    23%
+src/backend/base/langflow/services/auth/utils.py                                                    241    134     44      9    41%
+src/backend/base/langflow/services/audit/feed.py                                                    242    161     80      0    25%
+src/backend/base/langflow/services/memory_base/service.py                                           242    184     54      0    20%
+src/backend/base/langflow/services/memory_base/ingestion.py                                         246    215     48      0    11%
+src/backend/base/langflow/cli/integrity.py                                                          247    212     60      0    11%
+src/backend/base/langflow/services/tracing/arize_phoenix.py                                         247    247     70      0     0%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/tools.py            248    248     54      0     0%
+src/backend/base/langflow/services/tracing/langfuse.py                                              248    198     58      0    16%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/core/update.py           250    250     80      0     0%
+src/backend/base/langflow/api/v2/mcp.py                                                             253    198     74      3    18%
+src/backend/base/langflow/api/v1/authz_shares.py                                                    262    202     76      0    18%
+src/backend/base/langflow/api/v1/users.py                                                           263    210     76      0    16%
+src/backend/base/langflow/api/utils/mcp/config_utils.py                                             264    210     86      0    15%
+src/backend/base/langflow/services/auth/external.py                                                 267    211    106      1    15%
+src/backend/base/langflow/memory.py                                                                 275    233    108      0    11%
+src/backend/base/langflow/services/triggers/subscriptions.py                                        276    224     58      0    16%
+src/backend/base/langflow/api/v1/mappers/deployments/base.py                                        279    193     28      0    28%
+src/backend/base/langflow/services/cache/service.py                                                 284    179     64      4    31%
+src/backend/base/langflow/services/knowledge_base_storage/maintenance.py                            285    247    122      2    10%
+src/backend/base/langflow/api/utils/knowledge_base_relocation.py                                    286    286    104      0     0%
+src/backend/base/langflow/api/utils/knowledge_base_service.py                                       290    207    104      8    23%
+src/backend/base/langflow/services/memory_base/task.py                                              295    234     50      0    18%
+src/backend/base/langflow/services/storage/s3.py                                                    296    265     90      0     8%
+src/backend/base/langflow/services/triggers/source_poll.py                                          299    299    140      0     0%
+src/backend/base/langflow/services/tracing/service.py                                               306    247     94      2    15%
+src/backend/base/langflow/services/warm_registry/service.py                                         310    246     90      0    16%
+src/backend/base/langflow/api/v1/mappers/deployments/watsonx_orchestrate/payloads.py                316    316     54      0     0%
+src/backend/base/langflow/cli/preflight.py                                                          322    254     78      2    18%
+src/backend/base/langflow/services/variable/service.py                                              325    232    128     13    25%
+src/backend/base/langflow/cli/admin/reconcile.py                                                    333    302    174      0     6%
+src/backend/base/langflow/services/store/service.py                                                 341    297    100      0    10%
+src/backend/base/langflow/api/v2/workflow.py                                                        342    278     74      0    15%
+src/backend/base/langflow/services/database/models/auth/sso.py                                      342    152     68      0    46%
+src/backend/base/langflow/api/v1/openai_responses.py                                                344    303    138      0     9%
+src/backend/base/langflow/services/authorization/audit.py                                           345     34    100     19    87%
+src/backend/base/langflow/services/triggers/providers/slack/socket_mode.py                          347    347    114      0     0%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/service.py               348    348     60      0     0%
+src/backend/base/langflow/api/v1/mcp_utils.py                                                       350    238     96     10    27%
+src/backend/base/langflow/api/v2/workflow_execution.py                                              368    297     94      0    15%
+src/backend/base/langflow/api/v1/flows_helpers.py                                                   370     71    152     35    75%
+src/backend/base/langflow/services/database/sqlite_to_postgres.py                                   370    290    130      0    16%
+src/backend/base/langflow/api/v1/mappers/deployments/helpers.py                                     386    322    104      0    13%
+src/backend/base/langflow/api/utils/kb_helpers.py                                                   388    298    108      9    20%
+src/backend/base/langflow/services/connection/service.py                                            388    322    108      0    13%
+src/backend/base/langflow/helpers/flow.py                                                           389    338    128      0    10%
+src/backend/base/langflow/services/knowledge_base_storage/controller.py                             389    389    152      0     0%
+src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/payloads.py              398    398     98      0     0%
+src/backend/base/langflow/api/v1/a2a.py                                                             399    286     94      1    23%
+src/backend/base/langflow/services/tracing/openlayer.py                                             405    405    212      0     0%
+src/backend/base/langflow/cli/admin/commands.py                                                     413    250     80      0    33%
+src/backend/base/langflow/services/triggers/dispatcher.py                                           416    357    104      1    12%
+src/backend/base/langflow/services/triggers/listeners/supervisor.py                                 422    346    134      0    14%
+src/backend/base/langflow/api/v1/monitor.py                                                         423    348    108      0    14%
+src/backend/base/langflow/services/utils.py                                                         442    211    100     21    49%
+src/backend/base/langflow/services/knowledge_base_storage/runtime.py                                450    283    142     24    33%
+src/backend/base/langflow/api/v2/files.py                                                           479    349    142     15    23%
+src/backend/base/langflow/services/database/service.py                                              488    240    134     31    47%
+src/backend/base/langflow/utils/flow_secrets.py                                                     499    206    314     53    52%
+src/backend/base/langflow/api/v1/chat.py                                                            512    417    104      6    16%
+src/backend/base/langflow/api/build.py                                                              515    378    144     15    23%
+src/backend/base/langflow/api/v1/deployments.py                                                     522    522    104      0     0%
+src/backend/base/langflow/services/telemetry_writer/service.py                                      531    437    166      1    14%
+src/backend/base/langflow/services/knowledge_base_storage/coordinator.py                            545    383    198     16    24%
+src/backend/base/langflow/api/v1/mappers/deployments/watsonx_orchestrate/mapper.py                  548    548    166      0     0%
+src/backend/base/langflow/services/background_execution/service.py                                  550    390    150     11    25%
+src/backend/base/langflow/agentic/services/assistant_service.py                                     581    527    208      0     7%
+src/backend/base/langflow/api/v1/models.py                                                          587    466    208      2    15%
+src/backend/base/langflow/services/jobs/service.py                                                  620    464    172     19    22%
+src/backend/base/langflow/api/v1/flows.py                                                           694    347    214     38    45%
+src/backend/base/langflow/api/v1/endpoints.py                                                       712    554    192      7    18%
+src/backend/base/langflow/main.py                                                                   722    323    136     43    52%
+src/backend/base/langflow/api/v1/projects.py                                                        747    581    246     12    19%
+src/backend/base/langflow/api/v1/knowledge_bases.py                                                 766    541    196     21    26%
+src/backend/base/langflow/__main__.py                                                               793    645    222      5    15%
+src/backend/base/langflow/api/v1/migration.py                                                       848    660    222      0    18%
+src/backend/base/langflow/services/job_queue/service.py                                             868    649    240     14    22%
+src/backend/base/langflow/api/v1/mcp_projects.py                                                    875    717    254      3    14%
+src/backend/base/langflow/api/v1/voice_mode.py                                                      878    766    236      0    10%
+src/backend/base/langflow/initial_setup/setup.py                                                    882    546    372     44    35%
+src/backend/base/langflow/services/auth/service.py                                                  921    718    328     20    18%
+src/backend/base/langflow/services/deployment_artifacts/builder.py                                  990    776    412      0    15%
+src/backend/base/langflow/agentic/helpers/code_security.py                                         1261   1079    678      0    10%
+-----------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                             72155  50843  20358    832    25%
+
+1 empty file skipped.
+Coverage HTML written to dir docs/coverage/after-html
+================== 407 passed, 1 warning in 128.25s (0:02:08) ==================
