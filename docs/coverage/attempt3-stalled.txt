@@ -1,0 +1,831 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/avalm/langflow
+configfile: pyproject.toml
+plugins: langflow-sdk-0.4.0, locust-2.47.0, json-report-1.5.0, sugar-1.1.1, anyio-4.14.2, xdist-3.8.0, instafail-0.5.0, hypothesis-6.161.7, github-actions-annotate-failures-0.4.2, opik-2.2.7, mock-3.15.1, Faker-40.36.0, split-0.11.0, profiling-1.8.1, lfx-1.13.2, typeguard-4.6.0, langsmith-0.10.10, codeflash-benchmark-0.3.0, cov-7.1.0, flakefinder-1.1.0, metadata-3.1.1, rerunfailures-16.4, asyncio-1.4.0, respx-0.23.1, pyleak-0.2.0, timeout-2.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+timeout: 90.0s
+timeout method: thread
+timeout func_only: False
+created: 4/4 workers
+4 workers [949 items]
+
+scheduling tests via LoadScheduling
+
+src/backend/tests/unit/api/v1/test_flows.py::test_upload_flow_rejects_list_payload
+src/backend/tests/unit/api/v1/test_flows.py::test_create_flow
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_noop_when_audit_disabled[asyncio]
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_admin_only_passes_sanitized_stored_data_to_worker
+[gw3] [  0%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_noop_when_audit_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_enqueues_when_enabled[asyncio]
+[gw0] [  0%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_admin_only_passes_sanitized_stored_data_to_worker
+[gw3] [  0%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_enqueues_when_enabled[asyncio]
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_stored_data_permissive_policy_still_builds_from_db
+src/backend/tests/unit/services/authorization/test_audit.py::test_api_key_actor_is_captured_centrally_and_preserves_owner[asyncio]
+[gw3] [  0%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_api_key_actor_is_captured_centrally_and_preserves_owner[asyncio]
+[gw0] [  0%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_stored_data_permissive_policy_still_builds_from_db
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_admin_only_keeps_superuser_stored_custom_code
+src/backend/tests/unit/services/authorization/test_audit.py::test_jwt_and_system_actor_identity_are_derived_per_queued_entry[asyncio]
+[gw0] [  0%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_admin_only_keeps_superuser_stored_custom_code
+[gw3] [  0%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_jwt_and_system_actor_identity_are_derived_per_queued_entry[asyncio]
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_legacy_vertices_route_passes_sanitized_data_and_caller[False]
+src/backend/tests/unit/services/authorization/test_audit.py::test_public_principal_uses_stable_non_user_audit_actor[asyncio]
+[gw3] [  0%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_public_principal_uses_stable_non_user_audit_actor[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_invalid_api_key_actor_uuid_is_safely_dropped[asyncio]
+[gw0] [  0%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_legacy_vertices_route_passes_sanitized_data_and_caller[False]
+[gw3] [  1%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_invalid_api_key_actor_uuid_is_safely_dropped[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_flush_batch_maps_actor_fields_to_model[asyncio]
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_legacy_vertices_route_passes_sanitized_data_and_caller[True]
+[gw0] [  1%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_legacy_vertices_route_passes_sanitized_data_and_caller[True]
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_plugin_deny_returns_404_not_403
+[gw0] [  1%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_plugin_deny_returns_404_not_403
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_unknown_flow_returns_404
+[gw0] [  1%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_unknown_flow_returns_404
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_public_fallback_when_share_aware_misses
+[gw0] [  1%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_public_fallback_when_share_aware_misses
+src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_non_403_exception_not_converted
+[gw0] [  1%] PASSED src/backend/tests/unit/api/v1/test_chat_build_flow_authz.py::test_build_flow_non_403_exception_not_converted
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_allows_read[read]
+[gw0] [  1%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_allows_read[read]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[write]
+[gw0] [  1%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[write]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[create]
+[gw0] [  1%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[create]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[delete]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[delete]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[execute]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[execute]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[ingest]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[ingest]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[deploy]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_viewer_ceiling_denies_non_read[deploy]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[read]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[read]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[write]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[write]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[create]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[create]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[delete]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[delete]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[execute]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[execute]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[ingest]
+[gw0] [  2%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_allows_crud_and_execute[ingest]
+[gw3] [  3%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_flush_batch_maps_actor_fields_to_model[asyncio]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_denies_deploy
+[gw0] [  3%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_editor_ceiling_denies_deploy
+src/backend/tests/unit/services/authorization/test_audit.py::test_flush_batch_stages_plugin_events_in_same_transaction[asyncio]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[read]
+[gw3] [  3%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_flush_batch_stages_plugin_events_in_same_transaction[asyncio]
+[gw0] [  3%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[read]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_batches_multiple_entries[asyncio]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[write]
+[gw0] [  3%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[write]
+[gw3] [  3%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_batches_multiple_entries[asyncio]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[create]
+src/backend/tests/unit/services/authorization/test_audit.py::test_idle_drain_keeps_durable_admission_terminal[asyncio]
+[gw0] [  3%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[create]
+[gw3] [  3%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_idle_drain_keeps_durable_admission_terminal[asyncio]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[delete]
+src/backend/tests/unit/services/authorization/test_audit.py::test_ensure_permission_fails_closed_on_plugin_exception[asyncio]
+[gw0] [  3%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[delete]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[execute]
+[gw0] [  4%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[execute]
+[gw3] [  4%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_ensure_permission_fails_closed_on_plugin_exception[asyncio]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[ingest]
+[gw0] [  4%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[ingest]
+src/backend/tests/unit/services/authorization/test_audit.py::test_stage_audit_decision_uses_caller_transaction
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[deploy]
+[gw3] [  4%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_stage_audit_decision_uses_caller_transaction
+[gw0] [  4%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_admin_ceiling_allows_everything[deploy]
+src/backend/tests/unit/services/authorization/test_audit.py::test_stage_audit_decision_preserves_best_effort_pipeline
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[read]
+[gw3] [  4%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_stage_audit_decision_preserves_best_effort_pipeline
+[gw0] [  4%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[read]
+src/backend/tests/unit/services/authorization/test_audit.py::test_new_loop_replaces_idle_drained_pipeline
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[write]
+[gw0] [  4%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[write]
+[gw3] [  4%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_new_loop_replaces_idle_drained_pipeline
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[create]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_runs_cleanup_repeatedly_on_schedule
+[gw0] [  4%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[create]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[delete]
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[delete]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[execute]
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[execute]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[ingest]
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[ingest]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[deploy]
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_no_ceiling_allows_everything[deploy]
+src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_filter_actions_through_editor_ceiling_keeps_delete_drops_deploy
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_access_ceiling_levels.py::test_filter_actions_through_editor_ceiling_keeps_delete_drops_deploy
+src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_values_match_policy_strings
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_values_match_policy_strings
+src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_subclasses_str
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_subclasses_str
+src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_is_iterable_and_complete
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_flow_action_is_iterable_and_complete
+src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_values_match_policy_strings
+[gw0] [  5%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_values_match_policy_strings
+src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_subclasses_str
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_subclasses_str
+src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_is_iterable_and_complete
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_deployment_action_is_iterable_and_complete
+src/backend/tests/unit/services/authorization/test_actions.py::test_knowledge_base_action_values
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_knowledge_base_action_values
+src/backend/tests/unit/services/authorization/test_actions.py::test_variable_action_values
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_variable_action_values
+src/backend/tests/unit/services/authorization/test_actions.py::test_file_action_values
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_file_action_values
+src/backend/tests/unit/services/authorization/test_actions.py::test_share_action_values
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_share_action_values
+src/backend/tests/unit/services/authorization/test_actions.py::test_new_actions_subclass_str
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_actions.py::test_new_actions_subclass_str
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_mode_is_explicitly_disabled_by_default
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_mode_is_explicitly_disabled_by_default
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_call_returns_only_after_its_batch_is_persisted[asyncio]
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_call_returns_only_after_its_batch_is_persisted[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_backpressures_at_capacity_instead_of_dropping[asyncio]
+[gw0] [  6%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_backpressures_at_capacity_instead_of_dropping[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_failure_is_sanitized_and_propagated_to_the_caller[asyncio]
+[gw0] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_audit_failure_is_sanitized_and_propagated_to_the_caller[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_caller_timeout_does_not_cancel_an_accepted_persistence[asyncio]
+[gw0] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_caller_timeout_does_not_cancel_an_accepted_persistence[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_shutdown_gives_inflight_and_queued_entries_terminal_failures[asyncio]
+[gw3] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_runs_cleanup_repeatedly_on_schedule
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_is_noop_when_retention_disabled
+[gw0] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_shutdown_gives_inflight_and_queued_entries_terminal_failures[asyncio]
+[gw3] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_is_noop_when_retention_disabled
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_shutdown_rejects_a_producer_blocked_on_full_capacity[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_is_noop_when_audit_disabled
+[gw3] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_is_noop_when_audit_disabled
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_start_stop_and_idempotency
+[gw3] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_start_stop_and_idempotency
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_survives_cleanup_failure
+[gw0] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_shutdown_rejects_a_producer_blocked_on_full_capacity[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_durable_post_drain_rejection_does_not_restart_writer[asyncio]
+[gw0] [  7%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_durable_post_drain_rejection_does_not_restart_writer[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_cancelled_capacity_waiter_is_never_admitted[asyncio]
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_cancelled_capacity_waiter_is_never_admitted[asyncio]
+src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_runs_when_authz_disabled_but_audit_on[asyncio]
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_audit.py::test_audit_decision_runs_when_authz_disabled_but_audit_on[asyncio]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_id_only_when_service_supports_cross_user_fetch[asyncio]
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_fetch.py::test_id_only_when_service_supports_cross_user_fetch[asyncio]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_write_fetch_refreshes_identity_map_and_locks_row[asyncio]
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_fetch.py::test_write_fetch_refreshes_identity_map_and_locks_row[asyncio]
+src/backend/tests/unit/services/authorization/test_fetch.py::test_deny_to_404_only_rewrites_403
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_fetch.py::test_deny_to_404_only_rewrites_403
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_noop_when_disabled[asyncio]
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_noop_when_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_empty_returns_empty[asyncio]
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_empty_returns_empty[asyncio]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_filters_via_batch_enforce[asyncio]
+[gw3] [  8%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_survives_cleanup_failure
+[gw0] [  8%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_filters_via_batch_enforce[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_interval_resolution_prefers_override
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_accepts_custom_key[asyncio]
+[gw3] [  8%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_interval_resolution_prefers_override
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_accepts_custom_key[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_prunes_old_rows_on_schedule
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_groups_by_extracted_domain[asyncio]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_groups_by_extracted_domain[asyncio]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_owner_override_skips_enforcer[asyncio]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_owner_override_skips_enforcer[asyncio]
+src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_api_key_scope_plugin_evaluates_owned_rows[asyncio]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_filter_visible.py::test_filter_visible_resources_api_key_scope_plugin_evaluates_owned_rows[asyncio]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[create_flow-FlowAction.CREATE]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[create_flow-FlowAction.CREATE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[read_flow-FlowAction.READ]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[read_flow-FlowAction.READ]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[update_flow-FlowAction.WRITE]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[update_flow-FlowAction.WRITE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[delete_flow-FlowAction.DELETE]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[delete_flow-FlowAction.DELETE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[create_flows-FlowAction.CREATE]
+[gw0] [  9%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[create_flows-FlowAction.CREATE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[upload_file-FlowAction.CREATE]
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_single_guard_route_uses_enum_action[upload_file-FlowAction.CREATE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_guards_both_create_and_write
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_guards_both_create_and_write
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_delete_multiple_flows_guards_each_flow
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_delete_multiple_flows_guards_each_flow
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_download_multiple_file_guards_each_flow
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_download_multiple_file_guards_each_flow
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_create_flows_guards_each_flow_with_its_destination
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_create_flows_guards_each_flow_with_its_destination
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upload_file_guards_each_flow_with_effective_destination
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upload_file_guards_each_flow_with_effective_destination
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_update_flow_authorizes_destination_on_move
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_update_flow_authorizes_destination_on_move
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_update_branch_authorizes_destination_on_move
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_update_branch_authorizes_destination_on_move
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_reauthorizes_fresh_source_and_destination
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_upsert_flow_reauthorizes_fresh_source_and_destination
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_no_bare_string_actions_remain
+[gw0] [ 10%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_no_bare_string_actions_remain
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_read_public_flow_remains_unguarded
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_read_public_flow_remains_unguarded
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_get_note_translations_is_owner_scoped_and_guarded
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_get_note_translations_is_owner_scoped_and_guarded
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_read_flows_list_uses_filter_visible_resources
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_read_flows_list_uses_filter_visible_resources
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path0-build_flow]
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path0-build_flow]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path1-retrieve_vertices_order]
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path1-retrieve_vertices_order]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path2-build_vertex]
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path2-build_vertex]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path3-simplified_run_flow]
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path3-simplified_run_flow]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path4-simplified_run_flow_session]
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path4-simplified_run_flow_session]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path5-webhook_run_flow]
+[gw0] [ 11%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path5-webhook_run_flow]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path6-experimental_run_flow]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_execute_surfaces_guard_with_flow_execute[module_path6-experimental_run_flow]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[bare-name-call-to-module-helper]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[bare-name-call-to-module-helper]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[guard-only-in-uncalled-closure]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[guard-only-in-uncalled-closure]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[attribute-call-sharing-a-helper-name]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[attribute-call-sharing-a-helper-name]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[call-inside-a-lambda]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_guard_reachability_follows_only_calls_the_surface_makes[call-inside-a-lambda]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_voice_build_seam_reaches_the_same_execute_guard
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_voice_build_seam_reaches_the_same_execute_guard
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_check_flow_user_permission_is_gone
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_check_flow_user_permission_is_gone
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[create_project-ProjectAction.CREATE]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[create_project-ProjectAction.CREATE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[read_project-ProjectAction.READ]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[read_project-ProjectAction.READ]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[update_project-ProjectAction.WRITE]
+[gw0] [ 12%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[update_project-ProjectAction.WRITE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[delete_project-ProjectAction.DELETE]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[delete_project-ProjectAction.DELETE]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[download_file-ProjectAction.READ]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[download_file-ProjectAction.READ]
+src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[upload_file-ProjectAction.CREATE]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_flow_route_guards.py::test_project_routes_guarded[upload_file-ProjectAction.CREATE]
+src/backend/tests/unit/services/authorization/test_guards.py::test_connection_owner_and_scoped_api_key_personas[asyncio]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_connection_owner_and_scoped_api_key_personas[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_noop_when_disabled[asyncio]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_noop_when_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_allows_when_enforce_returns_true[asyncio]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_allows_when_enforce_returns_true[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_caller_context_cannot_override_is_superuser[asyncio]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_caller_context_cannot_override_is_superuser[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_raises_403_with_non_disclosing_default[asyncio]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_raises_403_with_non_disclosing_default[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_accepts_explicit_detail_override[asyncio]
+[gw0] [ 13%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_accepts_explicit_detail_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_writes_audit_on_allow[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_writes_audit_on_allow[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_writes_audit_on_deny[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_writes_audit_on_deny[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_forwards_auth_context[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_permission_forwards_auth_context[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_accepts_enum[asyncio]
+[gw3] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_audit_cleanup_worker.py::test_worker_prunes_old_rows_on_schedule
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_accepts_enum[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_accepts_string_for_backcompat[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_prunes_rows_past_retention[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_accepts_string_for_backcompat[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_computes_workspace_domain[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_computes_workspace_domain[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_falls_back_to_project_domain[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_falls_back_to_project_domain[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_project_beats_workspace[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_project_beats_workspace[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_wildcard_domain_when_neither_set[asyncio]
+[gw0] [ 14%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flow_permission_wildcard_domain_when_neither_set[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_owner_override_skips_enforce[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_owner_override_skips_enforce[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_api_key_scope_plugin_sees_owner_resource_instead_of_owner_override[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_api_key_scope_plugin_sees_owner_resource_instead_of_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_external_viewer_ceiling_denies_before_owner_override[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_external_viewer_ceiling_denies_before_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_external_editor_ceiling_allows_write_then_owner_override[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_external_editor_ceiling_allows_write_then_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_owner_override_audits_even_when_authz_disabled[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_owner_override_audits_even_when_authz_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_non_owner_falls_through_to_enforce[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_non_owner_falls_through_to_enforce[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_batches_flow_ids[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_batches_flow_ids[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_raises_when_any_denied[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_raises_when_any_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_fails_closed_on_result_count_mismatch[asyncio]
+[gw0] [ 15%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_fails_closed_on_result_count_mismatch[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_applies_external_ceiling_when_authz_disabled[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_applies_external_ceiling_when_authz_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_owner_override_skips_batch[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_owner_override_skips_batch[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_forwards_same_context_as_single_flow_check[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_flows_permission_forwards_same_context_as_single_flow_check[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_accepts_enum[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_accepts_enum[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_uses_project_domain[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_uses_project_domain[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_project_owner_override_skips_enforce[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_project_owner_override_skips_enforce[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_create_uses_wildcard_obj[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_create_uses_wildcard_obj[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_create_uses_workspace_domain[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_project_permission_create_uses_workspace_domain[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_deployment_permission_uses_project_domain[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_ensure_deployment_permission_uses_project_domain[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_deployment_owner_override_skips_enforce[asyncio]
+[gw0] [ 16%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_deployment_owner_override_skips_enforce[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_provider_account_owner_and_scoped_api_key_personas[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_provider_account_owner_and_scoped_api_key_personas[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_voice_owner_and_scoped_api_key_personas[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_voice_owner_and_scoped_api_key_personas[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_uses_kb_id_object_slug[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_uses_kb_id_object_slug[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_owner_override[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_denied_raises_403[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_kb_permission_denied_raises_403[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_kb_create_permission_ignores_prospective_owner[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_kb_create_permission_ignores_prospective_owner[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_variable_permission_uses_variable_object_slug[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_variable_permission_uses_variable_object_slug[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_variable_permission_owner_override[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_variable_permission_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_variable_create_permission_ignores_prospective_owner[asyncio]
+[gw0] [ 17%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_variable_create_permission_ignores_prospective_owner[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_create_audits_allow_when_enforcement_is_disabled[asyncio]
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_create_audits_allow_when_enforcement_is_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_file_permission_uses_file_object_slug[asyncio]
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_file_permission_uses_file_object_slug[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_file_permission_owner_override[asyncio]
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_file_permission_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_file_create_permission_ignores_prospective_owner[asyncio]
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_file_create_permission_ignores_prospective_owner[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_share_permission_uses_share_object_slug[asyncio]
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_share_permission_uses_share_object_slug[asyncio]
+src/backend/tests/unit/services/authorization/test_guards.py::test_share_create_permission_uses_existing_resource_owner_override[asyncio]
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_guards.py::test_share_create_permission_uses_existing_resource_owner_override[asyncio]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_guard_decisions_are_tagged_as_decisions
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_guard_decisions_are_tagged_as_decisions
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_decision_and_mutation_markers_are_distinct
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_decision_and_mutation_markers_are_distinct
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_readable_resource_keeps_the_403
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_readable_resource_keeps_the_403
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_unreadable_resource_still_masks_as_404
+[gw0] [ 18%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_unreadable_resource_still_masks_as_404
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_service_failure_during_the_read_check_is_not_a_404
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_service_failure_during_the_read_check_is_not_a_404
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_non_403_is_surfaced_unchanged
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_non_403_is_surfaced_unchanged
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_flow_spec_inherits_ownership_from_the_destination_project
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_flow_spec_inherits_ownership_from_the_destination_project
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_create_in_owned_project_takes_the_owner_override
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_create_in_owned_project_takes_the_owner_override
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_create_in_someone_elses_project_still_reaches_the_policy
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_create_in_someone_elses_project_still_reaches_the_policy
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_capability_probe_writes_no_decision_row
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_capability_probe_writes_no_decision_row
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_probe_suppression_does_not_leak_past_the_scope
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_probe_suppression_does_not_leak_past_the_scope
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[False-False]
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[False-False]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[True-False]
+[gw0] [ 19%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[True-False]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[False-True]
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_passthrough_cannot_authorize_graph_or_tweak_override[False-True]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_owner_override_is_resolved_without_consulting_policy
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_owner_override_is_resolved_without_consulting_policy
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_write_holder_may_override_someone_elses_flow
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_write_holder_may_override_someone_elses_flow
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_execute_only_caller_may_not_override
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_execute_only_caller_may_not_override
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[service]
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[service]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[supports_cross_user_fetch]
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[supports_cross_user_fetch]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[is_enabled]
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_failing_capability_probe_falls_back_to_stored_graph[is_enabled]
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_execute_only_run_keeps_going_with_the_stored_graph
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_execute_only_run_keeps_going_with_the_stored_graph
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_owner_keeps_their_unsaved_canvas
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_owner_keeps_their_unsaved_canvas
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_a_run_with_no_override_is_untouched
+[gw0] [ 20%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_a_run_with_no_override_is_untouched
+src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_event_class_filter_selects_and_never_hides_untagged_rows
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_prunes_rows_past_retention[asyncio]
+[gw0] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_le1905_regressions.py::test_event_class_filter_selects_and_never_hides_untagged_rows
+src/backend/tests/unit/services/authorization/test_listing_null_owner_prefilter.py::test_projects_prefilter_excludes_unlisted_null_owner_project
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_zero_disables_retention[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_zero_disables_retention[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_empty_table[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_audit_retention.py::test_clean_authz_audit_log_empty_table[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_passthrough_warning_emitted_when_authz_enabled[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_audit_retention.py::test_passthrough_warning_emitted_when_authz_enabled[asyncio]
+src/backend/tests/unit/services/authorization/test_audit_retention.py::test_passthrough_warning_silent_when_authz_disabled[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_audit_retention.py::test_passthrough_warning_silent_when_authz_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_enforce_allows_all_when_disabled[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_enforce_allows_all_when_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_enforce_allows_non_superuser_when_enabled[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_enforce_allows_non_superuser_when_enabled[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_is_enabled_reflects_setting[asyncio]
+[gw3] [ 21%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_is_enabled_reflects_setting[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_all_true_when_disabled[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_all_true_when_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_allows_non_superuser_when_enabled[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_allows_non_superuser_when_enabled[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_empty_requests[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_batch_enforce_empty_requests[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_get_allowed_actions_returns_all_actions[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_get_allowed_actions_returns_all_actions[asyncio]
+src/backend/tests/unit/services/authorization/test_authorization_service.py::test_get_allowed_actions_returns_all_when_disabled[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_authorization_service.py::test_get_allowed_actions_returns_all_when_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_user_is_noop[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_user_is_noop[asyncio]
+src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_role_is_noop[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_role_is_noop[asyncio]
+src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_all_is_noop[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_cache_hooks.py::test_invalidate_all_is_noop[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_base_class_default_is_false[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_base_class_default_is_false[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_public_principal_contract_is_explicit_and_defaults_deny[asyncio]
+[gw3] [ 22%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_public_principal_contract_is_explicit_and_defaults_deny[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_lfx_default_service_does_not_support_cross_user_fetch[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_lfx_default_service_does_not_support_cross_user_fetch[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_lfx_default_targeted_share_hooks_are_noops[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_lfx_default_targeted_share_hooks_are_noops[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_langflow_pass_through_does_not_support_cross_user_fetch[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_langflow_pass_through_does_not_support_cross_user_fetch[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_subclass_can_opt_in[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_subclass_can_opt_in[asyncio]
+src/backend/tests/unit/services/authorization/test_capability_flag.py::test_share_rule_snapshot_is_framework_neutral_and_immutable
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_capability_flag.py::test_share_rule_snapshot_is_framework_neutral_and_immutable
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_denies_before_body[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_denies_before_body[asyncio]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_maps_forbidden_to_value_error[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_maps_forbidden_to_value_error[asyncio]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_rejects_none_flow_id_before_body[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_rejects_none_flow_id_before_body[asyncio]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_resource_param_rejects_missing_id_before_body[asyncio]
+[gw3] [ 23%] PASSED src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_resource_param_rejects_missing_id_before_body[asyncio]
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_raises_on_missing_user_param
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_raises_on_missing_user_param
+src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_raises_on_missing_flow_id_param
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_decorators.py::test_requires_flow_permission_raises_on_missing_flow_id_param
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_resolve_authz_domain_precedence
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_resolve_authz_domain_precedence
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_parses_uuid_suffix
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_parses_uuid_suffix
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_wildcard_returns_none_id
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_wildcard_returns_none_id
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_malformed_returns_nones
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_malformed_returns_nones
+src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_non_uuid_suffix_returns_none_id
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_domain_resolution.py::test_split_obj_non_uuid_suffix_returns_none_id
+src/backend/tests/unit/services/authorization/test_factory.py::test_create_returns_base_authorization_service
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_factory.py::test_create_returns_base_authorization_service
+src/backend/tests/unit/services/authorization/test_factory.py::test_create_uses_injected_settings_service
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_factory.py::test_create_uses_injected_settings_service
+src/backend/tests/unit/services/authorization/test_factory.py::test_factory_name_matches_service_type
+[gw3] [ 24%] PASSED src/backend/tests/unit/services/authorization/test_factory.py::test_factory_name_matches_service_type
+src/backend/tests/unit/services/authorization/test_fetch.py::test_owner_scoped_when_service_does_not_support_cross_user_fetch[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_fetch.py::test_owner_scoped_when_service_does_not_support_cross_user_fetch[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_call_tool_viewer_denied_before_run[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_call_tool_viewer_denied_before_run[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_call_tool_owner_runs_without_ceiling[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_call_tool_owner_runs_without_ceiling[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_create_snapshot_viewer_denied[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_create_snapshot_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_delete_viewer_denied[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_delete_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_create_snapshot_owner_proceeds[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_flow_version_create_snapshot_owner_proceeds[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_upload_viewer_denied[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_upload_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_delete_viewer_denied[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_delete_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_delete_owner_proceeds[asyncio]
+[gw3] [ 25%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_files_delete_owner_proceeds[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_create_viewer_denied[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_create_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_delete_viewer_denied[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_delete_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_flush_viewer_denied[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_flush_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_regenerate_viewer_denied[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_regenerate_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_delete_owner_proceeds[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_memory_delete_owner_proceeds[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_viewer_denied_before_build[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_viewer_denied_before_build[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_update_viewer_denied_before_build[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_update_viewer_denied_before_build[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_editor_passes_ceiling[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_custom_component_editor_passes_ceiling[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_deprecated_upload_viewer_denied[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_deprecated_upload_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_deprecated_upload_owner_proceeds[asyncio]
+[gw3] [ 26%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_deprecated_upload_owner_proceeds[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_update_settings_viewer_denied[asyncio]
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_mcp_update_settings_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_update_enabled_models_viewer_denied[asyncio]
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_update_enabled_models_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_set_default_model_viewer_denied[asyncio]
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_set_default_model_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_clear_default_model_viewer_denied[asyncio]
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_clear_default_model_viewer_denied[asyncio]
+src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_set_default_model_owner_proceeds[asyncio]
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_ceiling_guards.py::test_set_default_model_owner_proceeds[asyncio]
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_flows_paginated_branch_passes_owner_extractor
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_flows_paginated_branch_passes_owner_extractor
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_upsert_flow_consults_cross_user_fetch_capability
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_upsert_flow_consults_cross_user_fetch_capability
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_upsert_flow_wraps_ensure_in_deny_to_404
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_upsert_flow_wraps_ensure_in_deny_to_404
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_delete_multiple_flows_does_not_unconditionally_prescope
+[gw3] [ 27%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_delete_multiple_flows_does_not_unconditionally_prescope
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_download_multiple_file_does_not_unconditionally_prescope
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_download_multiple_file_does_not_unconditionally_prescope
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_project_paginated_branch_filters_via_filter_visible_resources
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_project_paginated_branch_filters_via_filter_visible_resources
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_flows_wires_db_layer_prefilter
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_flows_wires_db_layer_prefilter
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_projects_wires_db_layer_prefilter
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_projects_wires_db_layer_prefilter
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_project_wires_db_layer_prefilter
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_read_project_wires_db_layer_prefilter
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_list_deployments_threads_prefilter_into_synced_query
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_list_deployments_threads_prefilter_into_synced_query
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_list_deployments_relaxes_provider_gate_on_prefilter
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_list_deployments_relaxes_provider_gate_on_prefilter
+src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_load_flow_calls_ensure_flow_permission
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_route_guard_regressions.py::test_load_flow_calls_ensure_flow_permission
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_source_kind_schema_matches_migration
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_source_kind_schema_matches_migration
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_manual_and_directory_grants_share_one_effective_membership
+[gw3] [ 28%] PASSED src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_manual_and_directory_grants_share_one_effective_membership
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_removing_one_source_preserves_effective_membership
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_removing_one_source_preserves_effective_membership
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_reconciliation_is_idempotent_and_source_scoped
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_reconciliation_is_idempotent_and_source_scoped
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_reconciliation_refreshes_legacy_membership_source
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_reconciliation_refreshes_legacy_membership_source
+src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_groups_are_independent_grant_sources
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_team_member_grants.py::test_directory_groups_are_independent_grant_sources
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_file_list_uses_global_structured_visibility[asyncio]
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_file_list_uses_global_structured_visibility[asyncio]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_file_list_excludes_reserved_mcp_file_for_every_owner[asyncio]
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_file_list_excludes_reserved_mcp_file_for_every_owner[asyncio]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_knowledge_base_list_forwards_concrete_structured_visibility[asyncio]
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_knowledge_base_list_forwards_concrete_structured_visibility[asyncio]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_memory_base_list_forwards_structured_visibility[asyncio]
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_memory_base_list_forwards_structured_visibility[asyncio]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_variable_list_forwards_global_structured_visibility[asyncio]
+[gw3] [ 29%] PASSED src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_variable_list_forwards_global_structured_visibility[asyncio]
+src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_unscoped_visibility_uses_global_and_concrete_grants_but_not_domain_grants
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_unscoped_list_visibility.py::test_unscoped_visibility_uses_global_and_concrete_grants_but_not_domain_grants
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_visible_scope_prefilter_forwards_structured_scope[asyncio]
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_visible_scope_prefilter_forwards_structured_scope[asyncio]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_visible_scope_prefilter_adapts_legacy_concrete_id_service[asyncio]
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_visible_scope_prefilter_adapts_legacy_concrete_id_service[asyncio]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_scope_predicate_unions_owner_explicit_workspace_and_project_grants
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_scope_predicate_unions_owner_explicit_workspace_and_project_grants
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_does_not_emit_an_unbounded_id_list
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_does_not_emit_an_unbounded_id_list
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_excludes_reserved_projects_but_keeps_owner_share_and_folderless
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_excludes_reserved_projects_but_keeps_owner_share_and_folderless
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_combines_reserved_project_and_resource_exclusions
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_global_scope_combines_reserved_project_and_resource_exclusions
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_unassigned_workspace_scope_uses_a_compact_null_predicate
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_unassigned_workspace_scope_uses_a_compact_null_predicate
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_workspace_scope_sql_matches_in_memory_for_project_nulls_and_exclusions
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_workspace_scope_sql_matches_in_memory_for_project_nulls_and_exclusions
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_excluded_resource_ids_wins_over_global_wildcard_but_not_ownership
+[gw3] [ 30%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_excluded_resource_ids_wins_over_global_wildcard_but_not_ownership
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_excluded_resource_ids_wins_over_a_workspace_grant
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_excluded_resource_ids_wins_over_a_workspace_grant
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_empty_excluded_resource_ids_is_a_complete_no_op
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_empty_excluded_resource_ids_is_a_complete_no_op
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_scope_reports_cross_user_access_without_resource_enumeration
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_scope_reports_cross_user_access_without_resource_enumeration
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-project]
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-project]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-flow]
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-flow]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-deployment]
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[global-deployment]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-project]
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-project]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-flow]
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-flow]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-deployment]
+[gw3] [ 31%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[workspace-deployment]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-project]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-project]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-flow]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-flow]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-deployment]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_project_exclusion_preserves_additive_grants_and_pagination[unassigned-deployment]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[global]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[global]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[workspace]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[workspace]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[unassigned]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_personal_exclusions_require_metadata_but_keep_explicit_grants[unassigned]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_explicit_project_grant_survives_global_reserved_project_exclusion[False]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_explicit_project_grant_survives_global_reserved_project_exclusion[False]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_explicit_project_grant_survives_global_reserved_project_exclusion[True]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_explicit_project_grant_survives_global_reserved_project_exclusion[True]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[global]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[global]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[workspace]
+[gw3] [ 32%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[workspace]
+src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[unassigned]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visibility_scope_prefilter.py::test_resource_exceptions_and_personal_project_exclusion_apply_together[unassigned]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_none_when_disabled[asyncio]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_none_when_disabled[asyncio]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_none_when_plugin_declines[asyncio]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_none_when_plugin_declines[asyncio]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_concrete_list_and_forwards_args[asyncio]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_returns_concrete_list_and_forwards_args[asyncio]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_default_domain_and_act[asyncio]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_visible_id_prefilter_default_domain_and_act[asyncio]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_apply_owned_or_visible_prefilter_unions_when_override_on[asyncio]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_apply_owned_or_visible_prefilter_unions_when_override_on[asyncio]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_apply_owned_or_visible_prefilter_skips_owner_when_override_off[asyncio]
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_apply_owned_or_visible_prefilter_skips_owner_when_override_off[asyncio]
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_restrict_to_owned_or_visible_unions_ids_and_owner
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_restrict_to_owned_or_visible_unions_ids_and_owner
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_restrict_to_owned_or_visible_empty_ids_keeps_owner_rows
+[gw3] [ 33%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_restrict_to_owned_or_visible_empty_ids_keeps_owner_rows
+src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_helpers_are_exported_from_package
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/authorization/test_visible_id_prefilter.py::test_helpers_are_exported_from_package
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_returns_active_user[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_returns_active_user[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_rejects_expired[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_rejects_expired[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_rejects_malformed_token[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_rejects_malformed_token[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_requires_active_user[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_user_from_access_token_requires_active_user[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_missing_creds_raises[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_missing_creds_raises[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_api_key_sets_auth_context[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_api_key_sets_auth_context[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_inactive_user_api_key_rejection_does_not_persist_usage[asyncio]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_inactive_user_api_key_rejection_does_not_persist_usage[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_api_key_fallback_rolls_back_failed_token_and_external_state[asyncio-external-only]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_api_key_fallback_rolls_back_failed_token_and_external_state[asyncio-external-only]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_api_key_fallback_rolls_back_failed_token_and_external_state[asyncio-native-and-external]
+[gw3] [ 34%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_api_key_fallback_rolls_back_failed_token_and_external_state[asyncio-native-and-external]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_alone_still_rejects[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_alone_still_rejects[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_returns_superuser[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_returns_superuser[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_missing_superuser_raises[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_missing_superuser_raises[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_auto_login_longterm_token_is_short_lived_with_refresh[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_auto_login_longterm_token_is_short_lived_with_refresh[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_empty_superuser_config_raises[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_empty_superuser_config_raises[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_rejects_inactive_superuser[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_with_credentials_auto_login_skip_rejects_inactive_superuser[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_rejects_legacy_default_password_in_auto_login[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_rejects_legacy_default_password_in_auto_login[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_rejects_legacy_default_password_when_auto_login_false[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_rejects_legacy_default_password_when_auto_login_false[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_rejects_legacy_default_username_after_superuser_override[asyncio]
+[gw3] [ 35%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_rejects_legacy_default_username_after_superuser_override[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_requires_refresh_type[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_requires_refresh_type[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_create_user_tokens[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_create_user_tokens[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_create_user_tokens_updates_last_login[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_create_user_tokens_updates_last_login[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_valid[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_valid[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_user_not_found[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_user_not_found[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_inactive_user[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_create_refresh_token_inactive_user[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_active[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_active[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_inactive[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_inactive[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_superuser_valid[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_superuser_valid[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_superuser_inactive[asyncio]
+[gw3] [ 36%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_superuser_inactive[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_superuser_not_superuser[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_superuser_not_superuser[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_success[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_success[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_wrong_password[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_wrong_password[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_not_found[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_not_found[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_inactive_never_logged_in[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_inactive_never_logged_in[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_inactive_previously_logged_in[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_authenticate_user_inactive_previously_logged_in[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_mcp_active[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_mcp_active[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_mcp_inactive[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_get_current_active_user_mcp_inactive[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_ws_api_key_security_auto_login_skip_rejects_missing_superuser[asyncio]
+[gw3] [ 37%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_ws_api_key_security_auto_login_skip_rejects_missing_superuser[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_ws_api_key_security_auto_login_skip_rejects_inactive_superuser[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_ws_api_key_security_auto_login_skip_rejects_inactive_superuser[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_api_key_security_impl_auto_login_skip_rejects_inactive_superuser[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_api_key_security_impl_auto_login_skip_rejects_inactive_superuser[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_materialize_external_user_preserves_email_when_token_omits_it[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_materialize_external_user_preserves_email_when_token_omits_it[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_materialize_external_user_falls_back_when_username_differs_only_in_case[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_materialize_external_user_falls_back_when_username_differs_only_in_case[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_normalizes_commits_and_audits[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_normalizes_commits_and_audits[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_accepts_present_empty_claim[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_accepts_present_empty_claim[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_resolves_nested_claim_path[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_resolves_nested_claim_path[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_nested_claim_path_does_not_collide_with_literal_dotted_overage_name[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_nested_claim_path_does_not_collide_with_literal_dotted_overage_name[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_nested_claim_path_detects_top_level_parent_overage[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_nested_claim_path_detects_top_level_parent_overage[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_marks_invalid_nested_container_malformed[asyncio]
+[gw3] [ 38%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_marks_invalid_nested_container_malformed[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-absent]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-absent]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-entra-overage]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-entra-overage]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-invalid-type]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-invalid-type]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-non-string]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-non-string]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-blank]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-blank]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-overlong]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-overlong]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-too-many]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_skips_authoritative_reconciliation[asyncio-too-many]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_reaches_plugin_before_commit[asyncio]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_reaches_plugin_before_commit[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_preserves_legacy_complete_only_plugin_contract[asyncio]
+[gw3] [ 39%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_preserves_legacy_complete_only_plugin_contract[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_preserves_duck_typed_legacy_plugin_contract[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_external_group_claim_preserves_duck_typed_legacy_plugin_contract[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_plugin_opt_out_is_not_a_skip[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_reconciliation_plugin_opt_out_is_not_a_skip[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_legacy_directory_ingest_result_invalidates_conservatively[asyncio-none]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_legacy_directory_ingest_result_invalidates_conservatively[asyncio-none]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_legacy_directory_ingest_result_invalidates_conservatively[asyncio-changed-only]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_legacy_directory_ingest_result_invalidates_conservatively[asyncio-changed-only]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_directory_post_commit_failure_does_not_fail_authentication[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_directory_post_commit_failure_does_not_fail_authentication[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_directory_post_commit_audit_failure_does_not_fail_authentication[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_directory_post_commit_audit_failure_does_not_fail_authentication[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_directory_skip_audit_failure_does_not_fail_authentication[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_directory_skip_audit_failure_does_not_fail_authentication[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_unchanged_directory_state_reconciles_once_per_interval[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_unchanged_directory_state_reconciles_once_per_interval[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_changed_group_claim_reconciles_immediately[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_changed_group_claim_reconciles_immediately[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_reconciliation_that_changed_state_is_confirmed_before_it_is_cached[asyncio]
+[gw3] [ 40%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_reconciliation_that_changed_state_is_confirmed_before_it_is_cached[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_zero_reconcile_interval_reconciles_every_request[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_zero_reconcile_interval_reconciles_every_request[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_claim_skip_is_not_audited_on_every_request[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_incomplete_claim_skip_is_not_audited_on_every_request[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_group_revoked_after_promotion_reconciles_immediately[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_group_revoked_after_promotion_reconciles_immediately[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_revocation_reconciles_even_after_the_promotion_was_confirmed_and_cached[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_revocation_reconciles_even_after_the_promotion_was_confirmed_and_cached[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_reconcile_cache_is_scoped_per_user[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_reconcile_cache_is_scoped_per_user[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_change_landing_after_a_concurrent_noop_pass_evicts_its_entry[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_change_landing_after_a_concurrent_noop_pass_evicts_its_entry[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_noop_pass_that_verified_a_superseded_state_is_not_remembered[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_noop_pass_that_verified_a_superseded_state_is_not_remembered[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_transient_database_failure_is_not_reported_as_an_authentication_failure[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_transient_database_failure_is_not_reported_as_an_authentication_failure[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_backend_unavailable_short_circuits_the_remaining_credentials[asyncio]
+[gw3] [ 41%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_backend_unavailable_short_circuits_the_remaining_credentials[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_a_deadlocked_attempt_is_replayed_before_it_is_reported[asyncio]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_a_deadlocked_attempt_is_replayed_before_it_is_reported[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_a_concurrent_assignment_race_is_replayed_not_rejected[asyncio]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_a_concurrent_assignment_race_is_replayed_not_rejected[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_policy_rejection_preserves_public_auth_error_across_credential_paths[asyncio-external-only]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_policy_rejection_preserves_public_auth_error_across_credential_paths[asyncio-external-only]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_policy_rejection_preserves_public_auth_error_across_credential_paths[asyncio-distinct-fallback]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_external_group_policy_rejection_preserves_public_auth_error_across_credential_paths[asyncio-distinct-fallback]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_invalid_native_token_falls_back_to_external_credential[asyncio]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_invalid_native_token_falls_back_to_external_credential[asyncio]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_distinct_external_fallback_rolls_back_and_replaces_failed_native_state[asyncio-credentials-unexpected-error]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_distinct_external_fallback_rolls_back_and_replaces_failed_native_state[asyncio-credentials-unexpected-error]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_distinct_external_fallback_rolls_back_and_replaces_failed_native_state[asyncio-credentials-policy-rejection]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_distinct_external_fallback_rolls_back_and_replaces_failed_native_state[asyncio-credentials-policy-rejection]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_distinct_external_fallback_rolls_back_and_replaces_failed_native_state[asyncio-access-token-policy-rejection]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_distinct_external_fallback_rolls_back_and_replaces_failed_native_state[asyncio-access-token-policy-rejection]
+src/backend/tests/unit/services/auth/test_auth_service.py::test_single_credential_policy_rejection_exits_with_clean_session_and_context[asyncio-credentials]
+[gw3] [ 42%] PASSED src/backend/tests/unit/services/auth/test_auth_service.py::test_single_credential_policy_rejection_exits_with_clean_session_and_context[asyncio-credentials]
